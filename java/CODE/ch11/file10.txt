@@ -1,0 +1,3 @@
+java is simple
+java is portable.
+java is machine independent language

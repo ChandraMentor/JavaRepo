@@ -1,0 +1,78 @@
+import java.applet.*;
+import java.awt.*;
+/*
+  <applet code="ProgressBar" width=400 height=100>
+  <param name="w" value="200">
+  <param name="h" value="50">
+  <param name="time" value="10000">
+  <param name="color" value="0x00ff00">
+  </applet>
+*/
+
+public class ProgressBar extends Applet
+implements Runnable {
+  int w, h, time;
+  int count;
+
+  // Declare buffer and graphics
+  Image buffer;
+  Graphics bufferg;
+
+  public void init() {
+
+    // Get applet parameters
+    w = Integer.parseInt(getParameter("w"));
+    h = Integer.parseInt(getParameter("h"));
+    time = Integer.parseInt(getParameter("time"));
+    Color color = Color.decode(getParameter("color"));
+
+    // Set foreground color
+    setForeground(color);
+
+    // Determine size of applet
+    Dimension d = getSize();
+
+    // Create background buffer 
+    buffer = createImage(d.width, d.height);
+
+    // Start thread
+    Thread thread = new Thread(this);
+    thread.start();
+  }
+  
+  public void run() {
+    
+    try {
+
+      for(count = 1; count <= w; count++) {
+        Thread.sleep(time/w);
+        repaint();
+      }
+    }
+    catch(Exception e) {
+    }
+  }
+
+  public void update(Graphics g) {
+    paint(g);
+  }
+
+  public void paint(Graphics g) {
+
+    // Get graphics context for buffer
+    if(bufferg == null) 
+      bufferg = buffer.getGraphics();
+
+    // Draw rectangle
+    Dimension d = getSize();
+    int x = (d.width - w)/2;
+    int y = (d.height - h)/2;
+    bufferg.drawRect(x, y, w, h);
+    bufferg.fillRect(x, y, count, h);
+
+    // Copy background buffer to screen
+    g.drawImage(buffer, 0, 0, null);
+  }
+}
+
+  

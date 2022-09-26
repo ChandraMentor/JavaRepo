@@ -1,0 +1,2534 @@
+<html><head><title> Numerical Computation Guide: 2 - IEEE Arithmetic
+</title></head>
+<body bgcolor=#ffffff>
+
+<center>
+<a href="ncg_intro.doc.html">
+<img src="shared/previous_motif.gif" alt="Previous"></a>
+
+<a href="ncg_lib.doc.html">
+<img src="shared/next_motif.gif" alt="Next"></a>
+<a href="index.html">
+<img src="shared/contents_motif.gif" alt="Contents"></a>
+<a href="IX.html">
+<img src="shared/index.gif" alt="Index"></a>
+<a href="../index.html">
+<img src="shared/up_motif.gif" alt="Doc Set"></a>
+<a href="../../index.html">
+<img src="shared/home.gif" alt="Home"></a>
+</center>
+<br><br>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td align="left">
+<a name="405">
+<h1><font size=7>
+IEEE Arithmetic
+</font></h1>
+</a></td>
+<td><a name="659">
+<h1 align="right"><font size=7>
+2
+</font></h1>
+</a></td>
+<td align="right"> <img src="chars/chapnumbar.gif"></td>
+</tr></table>
+<hr size="3" width="100%" align="left" noshade><a name="662">
+This chapter discusses the IEEE Standard 754, the arithmetic model
+specified by the IEEE Standard for Binary Floating-Point Arithmetic<em>
+(IEEE Standard for Binary Floating-Point Arithmetic, ANSI/IEEE Std
+754-1985 (IEEE 754))</em>. All SPARC, Intel, and PowerPC computers use
+IEEE arithmetic. All Sun compiler products support the features of IEEE
+arithmetic. <p>
+</a>
+<a name="393">
+This chapter is organized into the following sections: <br><br><Table
+Border="1" Cellpadding="5">
+<caption></caption>
+
+<tr valign="baseline"><td><a name="394">
+<p><a href="ncg_math.doc.html#556"><em>IEEE Arithmetic Model</em></a>
+</a>
+<td><a name="395">
+<p><a href="ncg_math.doc.html#556"><em>page&#160;3</em></a>
+</a>
+
+<tr valign="baseline"><td><a name="396">
+<p><a href="ncg_math.doc.html#685"><em>IEEE Formats</em></a>
+</a>
+<td><a name="397">
+<p><a href="ncg_math.doc.html#685"><em>page&#160;5</em></a>
+</a>
+
+<tr valign="baseline"><td><a name="408">
+<p><a href="ncg_math.doc.html#746"><em>Underflow</em></a>
+</a>
+<td><a name="409">
+<p><a href="ncg_math.doc.html#746"><em>page&#160;22</em></a>
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="556">
+<p><hr size="8" align="left" width="30%" noshade>
+<h2><font size=6><i></i> IEEE Arithmetic Model
+</font></h2>
+</a>
+<a name="444">
+This section describes the IEEE Standard 754 specification.<p>
+</a>
+<a name="343">
+<h3><font size=5><i></i> What Is IEEE Arithmetic?
+</font></h3>
+</a>
+<a name="368">
+The IEEE Standard 754 specifies: <p>
+</a>
+<ul><a name="554">
+<p><li>Two basic floating-point formats: <em>single and double</em>.
+</a>
+</ul><dl>
+<a name="701">
+<p><dd>The IEEE single format has a precision of 24 bits (24-bit
+significands), and 32 bits overall. The IEEE double format has a
+precision of 53 bits, and 64 bits overall.
+</a><p>
+</dl>
+<ul><a name="693">
+<p><li>Two classes of extended floating-point formats: <em>single
+extended</em> and <em>double extended</em>.
+</a>
+</ul><dl>
+<a name="714">
+<p><dd>Any format in the class of IEEE double extended formats has a
+precision at least of 64 bits, and at least 79 bits overall.
+</a><p>
+</dl>
+<ul><a name="710">
+<p><li>Accuracy requirements on floating-point operations: <em>add,
+subtract, multiply, divide, square root, remainder, round numbers in
+floating-point format to integer values, convert between different
+floating-point formats, convert between floating-point and integer
+formats, and compare.</em>
+</a>
+</ul><dl>
+<a name="711">
+<p><dd>The remainder and compare operations must be exact. Each of the
+other operations must deliver to its destination the exact result,
+unless there is no such result; or that result does not fit in the
+destination&#39;s format. In the latter case, the operation must
+minimally modify the exact result according to the rules of prescribed
+rounding modes, presented below, and deliver the result so modified to
+the operation&#39;s destination.
+</a><p>
+</dl>
+<ul><a name="712">
+<p><li>Accuracy, monotonicity and identity requirements for conversions
+between decimal strings and binary floating-point numbers in either of
+the basic floating-point formats.
+</a>
+</ul><dl>
+<a name="650">
+<p><dd>For operands lying within specified ranges, these conversions
+must produce exact results, if possible, or minimally modify such exact
+results in accordance with the rules of the prescribed rounding modes.
+For operands not lying within the specified ranges, these conversions
+must produce results that differ from the exact result by no more than
+a specified tolerance that depends on the rounding mode.
+</a><p>
+</dl>
+<ul><a name="651">
+<p><li>Five types of IEEE floating-point exceptions, and the conditions
+for indicating to the user the occurrence of exceptions of these
+types.
+</a>
+</ul><dl>
+<a name="698">
+<p><dd>The five types of floating-point exceptions are <em>invalid
+operation, division by zero, overflow, underflow, and inexact.</em>
+</a><p>
+</dl>
+<ul><a name="716">
+<p><li>Four rounding directions: <em>toward the nearest representable
+value</em>, with &#34;even&#34; values preferred whenever there are two
+nearest representable values; <em>toward</em> -<img
+src="ncg_lib.doc.anc.gif"> (down); <em>toward</em> +<img
+src="ncg_lib.doc.anc.gif"> (up); and <em>toward 0</em> (chop).
+</a>
+<a name="718">
+<p><li>Rounding precision; for example, if a system delivers results in
+double extended format, the user should be able to specify that such
+results are to be rounded to the precision of either basic format, with
+trailing zeros.
+</a>
+</ul><a name="687">
+The Standard supports user handling of exceptions, rounding, and
+precision. Consequently, the Standard supports interval arithmetic, and
+diagnosis of anomalies. The IEEE Standard 754 makes it possible to
+standardize elementary functions like <kbd>exp</kbd> and
+<kbd>cos</kbd>, to create very high-precision arithmetic, and to couple
+numerical and symbolic algebraic computation.<p>
+</a>
+<a name="458">
+IEEE Standard 754 floating-point arithmetic offers users greater
+control over computation than does any other kind of floating-point
+arithmetic. The IEEE Standard 754 simplifies the task of writing
+numerically sophisticated, portable programs not only by imposing
+rigorous requirements on conforming implementations. The Standard also
+allows such implementations to provide refinements and enhancements to
+the Standard itself. <p>
+</a>
+<a name="685">
+<p><hr size="8" align="left" width="30%" noshade>
+<h2><font size=6><i></i> IEEE Formats
+</font></h2>
+</a>
+<a name="688">
+This section describes how floating-point data is stored in memory. It
+summarizes the precisions and ranges of the different IEEE storage
+formats. <p>
+</a>
+<a name="702">
+<h3><font size=5><i></i> Storage Formats
+</font></h3>
+</a>
+<a name="643">
+A floating-point format is a data structure specifying the fields that
+comprise a floating-point numeral, the layout of those fields, and
+their arithmetic interpretation. A floating-point <em>storage</em>
+format specifies how a floating-point format is stored in memory. The
+IEEE standard defines the formats, but it leaves to implementors the
+choice of storage formats. <p>
+</a>
+<a name="345">
+Assembly language software sometimes relies on using the storage
+formats, but higher level languages usually deal only with the
+linguistic notions of floating-point data types. These types have
+different names in different high-level languages, and correspond to
+the IEEE formats as shown in Table&#160;2-1. <br><br><Table Border="1"
+Cellpadding="5">
+<caption><a name="677">
+<p><center><h4><font size=3>Table &#160;2-1      IEEE Formats and
+Language Types
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="364">
+<b>IEEE Precision</b><br>
+</a>
+<td><a name="666">
+<b>C, C++</b><br>
+</a>
+<a name="676">
+<b></b><br>
+</a>
+<td><a name="691">
+<b>FORTRAN</b><br>
+</a>
+<a name="491">
+<b></b><br>
+</a>
+
+<tr valign="baseline"><td><a name="492">
+<p>single
+</a>
+<td><a name="692">
+<p>float
+</a>
+<td><a name="695">
+<p>REAL or REAL*4
+</a>
+
+<tr valign="baseline"><td><a name="493">
+<p>double
+</a>
+<td><a name="723">
+<p>double
+</a>
+<td><a name="725">
+<p>DOUBLE PRECISION or REAL*8
+</a>
+
+<tr valign="baseline"><td><a name="365">
+<p>double
+</a>
+<a name="366">
+<p>extended
+</a>
+<td><a name="726">
+<p>long double
+</a>
+<td><a name="487">
+<p>REAL*16
+</a>
+<a name="363">
+<p>[SPARC and PowerPC only]
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="704">
+IEEE Standard 754 specifies exactly the single and double
+floating-point formats, and it defines a class of extended formats for
+each of these two basic formats. The format called double extended in
+Table 2-1 is one of the class of double extended formats defined by the
+IEEE standard. <p>
+</a>
+<a name="751">
+The following sections describe in detail each of the three storage
+formats used for the IEEE floating-point formats. <p>
+</a>
+<a name="344">
+<h3><font size=5><i></i> Single Format
+</font></h3>
+</a>
+<a name="4451">
+The IEEE single format consists of three fields: a 23-bit fraction,
+<kbd>f</kbd>; an 8-bit biased exponent, <kbd>e</kbd>; and a 1-bit sign,
+<kbd>s</kbd>. These fields are stored contiguously in one 32-bit word,
+as shown in <a href="ncg_math.doc.html#4483">Figure&#160;2-1</a>. Bits
+0:22 contain the 23-bit fraction, <kbd>f</kbd>, with bit 0 being the
+least significant bit of the fraction and bit 22 being the most
+significant; bits 23:30 contain the 8-bit biased exponent,
+<kbd>e</kbd>, with bit 23 being the least significant bit of the biased
+exponent and bit 30 being the most significant; and the highest-order
+bit 31 contains the sign bit, <kbd>s</kbd>. <p>
+</a>
+<a name="4483">
+<p><center><h5>Figure &#160;2-1  Single-Storage Format <p><img
+src="ncg_math.doc.anc4.gif">
+</h5></center>
+</a><a name="347">
+<a href="ncg_math.doc.html#347">Table&#160;2-2</a> shows the
+correspondence between the values of the three constituent fields
+<kbd>s</kbd>, <kbd>e</kbd> and <kbd>f</kbd>, on the one hand, and the
+value represented by the single- format bit pattern on the other;
+<em>u</em> means <em>don&#39;t care</em>, that is, the value of the
+indicated field is irrelevant to the determination of the value of the
+particular bit patterns in single format.<br><br><Table Border="1"
+Cellpadding="5">
+<caption><a name="845">
+<p><center><h4><font size=3>Table &#160;2-2      Values Represented by
+Bit Patterns in IEEE Single Format &#160;
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="425">
+<b>Single-Format Bit Pattern</b><br>
+</a>
+<td><a name="430">
+<b>Value</b><br>
+</a>
+
+<tr valign="baseline"><td><a name="432">
+<p>0 &lt; <kbd>e</kbd> &lt; 255
+</a>
+<td><a name="433">
+<p>(&#45;1)<sup>s</sup> x 2<sup>e&#45;127</sup> x 1.<kbd>f</kbd>
+(normal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="434">
+<p><kbd>e</kbd> = 0;<kbd> f</kbd> <img src="chars/notequal.gif"> 0
+</a>
+<a name="435">
+<p>(at least one bit in <kbd>f</kbd> is nonzero)
+</a>
+<td><a name="436">
+<p>(&#45;1)<sup>s</sup> x 2<sup>&#45;126</sup> x 0.<kbd>f</kbd>
+(subnormal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="437">
+<p><kbd>e</kbd> = 0; <kbd>f</kbd> = 0
+</a>
+<a name="438">
+<p>(all bits in <kbd>f</kbd> are zero)
+</a>
+<td><a name="439">
+<p>(&#45;1)<sup>s</sup> x 0.0 (signed zero)
+</a>
+
+<tr valign="baseline"><td><a name="440">
+<p><kbd>s</kbd> = 0; <kbd>e</kbd> = 255; <kbd>f</kbd> = 0 <br>(all bits
+in <kbd>f</kbd> are zero)
+</a>
+<td><a name="441">
+<p>+INF (positive infinity)
+</a>
+
+<tr valign="baseline"><td><a name="442">
+<p><kbd>s</kbd> = 1; <kbd>e</kbd> = 255; <kbd>f</kbd> = 0 <br> (all
+bits in <kbd>f</kbd> are zero)
+</a>
+<td><a name="443">
+<p> &#45;INF (negative infinity)
+</a>
+
+<tr valign="baseline"><td><a name="488">
+<p><kbd>s</kbd> = u; <kbd>e</kbd> = 255;<kbd> f</kbd> <img
+src="chars/notequal.gif"> 0
+</a>
+<a name="490">
+<p> (at least one bit in <kbd>f</kbd> is nonzero)
+</a>
+<td><a name="559">
+<p> NaN (Not-a-Number)
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+ <p>
+</a>
+<a name="821">
+Notice that when <kbd>e</kbd> &lt; 255, the value assigned to the
+single format bit pattern is formed by inserting the binary radix point
+immediately to the left of the fraction&#39;s most significant bit, and
+inserting an implicit bit immediately to the left of the binary point,
+thus representing in binary positional notation a mixed number (whole
+number plus fraction, wherein 0 &lt;= fraction &lt; 1). <p>
+</a>
+<a name="819">
+The mixed number thus formed is called the <em>single-format
+significand</em>. The implicit bit is so named because its value is not
+explicitly given in the single- format bit pattern, but is implied by
+the value of the biased exponent field.<p>
+</a>
+<a name="833">
+For the single format, the difference between a normal number and a
+subnormal number is that the leading bit of the significand (the bit to
+left of the binary point) of a normal number is 1, whereas the leading
+bit of the significand of a subnormal number is 0. Single-format
+subnormal numbers were called single-format denormalized numbers in
+IEEE Standard 754.<p>
+</a>
+<a name="400">
+The 23-bit fraction combined with the implicit leading significand bit
+provides 24 bits of precision in single-format normal numbers.<p>
+</a>
+<a name="362">
+Examples of important bit patterns in the single-storage format are
+shown in <a href="ncg_math.doc.html#362">Table&#160;2-3</a>. The
+maximum positive normal number is the largest finite number
+representable in IEEE single format. The minimum positive subnormal
+number is the smallest positive number representable in IEEE single
+format. The minimum positive normal number is often referred to as the
+underflow threshold. (The decimal values for the maximum and minimum
+normal and subnormal numbers are approximate; they are correct to the
+number of figures shown.)<br><br><Table Border="1" Cellpadding="5">
+<caption><a name="398">
+<p><center><h4><font size=3>Table &#160;2-3      Bit Patterns in
+Single-Storage Format and their IEEE Values
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="407">
+<b>Common Name</b><br>
+</a>
+<td><a name="412">
+<b>Bit Pattern (Hex)</b><br>
+</a>
+<td><a name="418">
+<b>Decimal Value</b><br>
+</a>
+
+<tr valign="baseline"><td><a name="419">
+<p>+ 0
+</a>
+<td><a name="420">
+<p><kbd>00000000</kbd>
+</a>
+<td><a name="422">
+<p>0.0
+</a>
+
+<tr valign="baseline"><td><a name="423">
+<p>&#45; 0
+</a>
+<td><a name="424">
+<p><kbd>80000000</kbd>
+</a>
+<td><a name="426">
+<p>&#45;0.0
+</a>
+
+<tr valign="baseline"><td><a name="715">
+<p>1
+</a>
+<td><a name="728">
+<p><kbd>3f800000</kbd>
+</a>
+<td><a name="745">
+<p>1.0
+</a>
+
+<tr valign="baseline"><td><a name="652">
+<p>2
+</a>
+<td><a name="654">
+<p><kbd>40000000</kbd>
+</a>
+<td><a name="655">
+<p>2.0
+</a>
+
+<tr valign="baseline"><td><a name="427">
+<p>maximum normal number
+</a>
+<td><a name="428">
+<p><kbd>7f7fffff</kbd>
+</a>
+<td><a name="429">
+<p>3.40282347e+38
+</a>
+
+<tr valign="baseline"><td><a name="431">
+<p>minimum positive normal number
+</a>
+<td><a name="447">
+<p><kbd>00800000</kbd>
+</a>
+<td><a name="501">
+<p>1.17549435e-38
+</a>
+
+<tr valign="baseline"><td><a name="507">
+<p>maximum subnormal number
+</a>
+<td><a name="508">
+<p><kbd>007fffff</kbd>
+</a>
+<td><a name="509">
+<p>1.17549421e-38
+</a>
+
+<tr valign="baseline"><td><a name="510">
+<p>minimum positive subnormal number
+</a>
+<td><a name="595">
+<p><kbd>00000001</kbd>
+</a>
+<td><a name="597">
+<p>1.40129846e-45
+</a>
+
+<tr valign="baseline"><td><a name="598">
+<p>+<img src="ncg_lib.doc.anc.gif">
+</a>
+<td><a name="599">
+<p><kbd>7f800000</kbd>
+</a>
+<td><a name="600">
+<p>Infinity
+</a>
+
+<tr valign="baseline"><td><a name="601">
+<p>&#45;<img src="ncg_lib.doc.anc.gif">
+</a>
+<td><a name="602">
+<p><kbd>ff800000</kbd>
+</a>
+<td><a name="603">
+<p>&#45;Infinity
+</a>
+
+<tr valign="baseline"><td><a name="604">
+<p>Not-a-Number
+</a>
+<td><a name="605">
+<p><kbd>7fc00000</kbd>
+</a>
+<td><a name="606">
+<p>NaN
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="608">
+A <kbd>NaN</kbd> (Not a Number) can be represented with any of the many
+bit patterns that satisfy the definition of a <kbd>NaN</kbd>. The hex
+value of the <kbd>NaN</kbd> shown in <a
+href="ncg_math.doc.html#362">Table&#160;2-3</a> is just one of the many
+bit patterns that can be used to represent a <kbd>NaN</kbd>.<p>
+</a>
+<a name="610">
+<h3><font size=5><i></i> Double Format
+</font></h3>
+</a>
+<a name="834">
+The IEEE double format consists of three fields: a 52-bit fraction,
+<kbd>f</kbd>; an 11-bit biased exponent, <kbd>e</kbd>; and a 1-bit
+sign, <kbd>s</kbd>. These fields are stored contiguously in two
+successively addressed 32-bit words, as shown in <a
+href="ncg_math.doc.html#732">Figure&#160;2-2</a>. <p>
+</a>
+<a name="835">
+In the SPARC architecture, the higher address 32-bit word contains the
+least significant 32 bits of the fraction, while in the Intel and
+PowerPC architectures the lower address 32-bit word contains the least
+significant 32 bits of the fraction. <p>
+</a>
+<a name="887">
+If we denote <kbd>f</kbd>[31:0] the least significant 32 bits of the
+fraction, then bit 0 is the least significant bit of the entire
+fraction and bit 31 is the most significant of the 32 least significant
+fraction bits. <p>
+</a>
+<a name="890">
+In the other 32-bit word, bits 0:19 contain the 20 most significant
+bits of the fraction, <kbd>f</kbd>[51:32], with bit 0 being the least
+significant of these 20 most significant fraction bits, and bit 19
+being the most significant bit of the entire fraction; bits 20:30
+contain the 11-bit biased exponent, <kbd>e</kbd>, with bit 20 being the
+least significant bit of the biased exponent and bit 30 being the most
+significant; and the highest-order bit 31 contains the sign bit,
+<kbd>s</kbd>.<p>
+</a>
+<a name="842">
+<a href="ncg_math.doc.html#732">Figure&#160;2-2</a> numbers the bits as
+though the two contiguous 32-bit words were one 64-bit word in which
+bits 0:51 store the 52-bit fraction, <kbd>f</kbd>; bits 52:62 store the
+11-bit biased exponent, <kbd>e</kbd>; and bit 63 stores the sign bit,
+<kbd>s</kbd>. <p>
+</a>
+<a name="731">
+<pre><p><img src="ncg_math.doc.anc13.gif">
+</pre>
+</a>
+<a name="732">
+<p><center><h5>Figure &#160;2-2  Double-Storage Format
+</h5></center>
+</a><a name="445">
+The values of the bit patterns in these three fields determine the
+value represented by the overall bit pattern. <p>
+</a>
+<a name="448">
+<a href="ncg_math.doc.html#448">Table&#160;2-4</a> shows the
+correspondence between the values of the bits in the three constituent
+fields, on the one hand, and the value represented by the double-
+format bit pattern on the other; <em>u</em> means <em>don&#39;t
+care</em>, because the value of the indicated field is irrelevant to
+the determination of value for the particular bit pattern in double
+format. <br><br><Table Border="1" Cellpadding="5">
+<caption><a name="893">
+<p><center><h4><font size=3>Table &#160;2-4      Values Represented by
+Bit Patterns in IEEE Double Format
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="895">
+<b>Double-Format Bit Pattern</b><br>
+</a>
+<td><a name="896">
+<b>Value</b><br>
+</a>
+
+<tr valign="baseline"><td><a name="897">
+<p>0 &lt; <kbd>e</kbd> &lt; 2047
+</a>
+<td><a name="898">
+<p>(&#45;1)<sup>s</sup> x 2<sup>e&#45;1023</sup> x 1.<kbd>f</kbd>
+(normal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="899">
+<p><kbd>e</kbd> = 0; <kbd>f</kbd> <img src="chars/notequal.gif"> 0
+</a>
+<a name="900">
+<p>(at least one bit in <kbd>f</kbd> is nonzero)
+</a>
+<td><a name="901">
+<p>(&#45;1)<sup>s</sup> x 2<sup>&#45;1022</sup> x 0.<kbd>f</kbd>
+(subnormal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="902">
+<p><kbd>e</kbd> = 0; <kbd>f</kbd> = 0
+</a>
+<a name="903">
+<p> (all bits in <kbd>f</kbd> are zero)
+</a>
+<td><a name="904">
+<p>(&#45;1)<sup>s</sup> x 0.0 (signed zero)
+</a>
+
+<tr valign="baseline"><td><a name="905">
+<p><kbd>s</kbd> = 0; <kbd>e</kbd> = 2047; <kbd>f</kbd> = 0 <br>(all
+bits in <kbd>f</kbd> are zero)
+</a>
+<td><a name="906">
+<p>+INF (positive infinity)
+</a>
+
+<tr valign="baseline"><td><a name="907">
+<p><kbd>s</kbd> = 1; <kbd>e</kbd> = 2047; <kbd>f</kbd> = 0 <br> (all
+bits in <kbd>f</kbd> are zero)
+</a>
+<td><a name="908">
+<p> &#45;INF (negative infinity)
+</a>
+
+<tr valign="baseline"><td><a name="909">
+<p><kbd>s</kbd> = u; <kbd>e</kbd> = 2047; <kbd>f</kbd> <img
+src="chars/notequal.gif"> 0
+</a>
+<a name="910">
+<p> (at least one bit in <kbd>f</kbd> is nonzero)
+</a>
+<td><a name="911">
+<p> NaN (Not-a-Number)
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="862">
+Notice that when <kbd>e</kbd> &lt; 2047, the value assigned to the
+double-format bit pattern is formed by inserting the binary radix point
+immediately to the left of the fraction&#39;s most significant bit, and
+inserting an implicit bit immediately to the left of the binary point.
+The number thus formed is called the <em>significand</em>. The implicit
+bit is so named because its value is not explicitly given in the
+double- format bit pattern, but is implied by the value of the biased
+exponent field.<p>
+</a>
+<a name="863">
+For the double format, the difference between a normal number and a
+subnormal number is that the leading bit of the significand (the bit to
+the left of the binary point) of a normal number is 1, whereas the
+leading bit of the significand of a subnormal number is 0.
+Double-format subnormal numbers were called double-format denormalized
+numbers in IEEE Standard 754.<p>
+</a>
+<a name="734">
+The 52-bit fraction combined with the implicit leading significand bit
+provides 53 bits of precision in double-format normal numbers.<p>
+</a>
+<a name="446">
+Examples of important bit patterns in the double-storage format are
+shown in <a href="ncg_math.doc.html#446">Table&#160;2-5</a>. The bit
+patterns in the second column appear as two 8-digit hexadecimal
+numbers. For the SPARC architecture, the left one is the value of the
+lower addressed 32-bit word, and the right one is the value of the
+higher addressed 32-bit word, while for the Intel and PowerPC
+architectures, the left one is the higher addressed word, and the right
+one is the lower addressed word. The maximum positive normal number is
+the largest finite number representable in the IEEE double format. The
+minimum positive subnormal number is the smallest positive number
+representable in IEEE double format. The minimum positive normal number
+is often referred to as the underflow threshold. (The decimal values
+for the maximum and minimum normal and subnormal numbers are
+approximate; they are correct to the number of figures shown.)
+<br><br><Table Border="1" Cellpadding="5">
+<caption><a name="513">
+<p><center><h4><font size=3>Table &#160;2-5      Bit Patterns in
+Double-Storage Format and their IEEE Values&#160;&#160;
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="516">
+<b>Common Name </b><br>
+</a>
+<td><a name="499">
+<b>Bit Pattern (Hex)</b><br>
+</a>
+<td><a name="514">
+<b>Decimal Value </b><br>
+</a>
+
+<tr valign="baseline"><td><a name="519">
+<p>+ 0
+</a>
+<td><a name="515">
+<p><kbd>00000000 00000000</kbd>
+</a>
+<td><a name="517">
+<p> 0.0
+</a>
+
+<tr valign="baseline"><td><a name="522">
+<p>&#45; 0
+</a>
+<td><a name="518">
+<p><kbd>80000000 00000000</kbd>
+</a>
+<td><a name="520">
+<p>&#45;0.0
+</a>
+
+<tr valign="baseline"><td><a name="790">
+<p> 1
+</a>
+<td><a name="777">
+<p><kbd>3ff00000 00000000</kbd>
+</a>
+<td><a name="778">
+<p>1.0
+</a>
+
+<tr valign="baseline"><td><a name="779">
+<p> 2
+</a>
+<td><a name="772">
+<p><kbd>40000000 00000000</kbd>
+</a>
+<td><a name="773">
+<p>2.0
+</a>
+
+<tr valign="baseline"><td><a name="525">
+<p>max normal number
+</a>
+<td><a name="521">
+<p><kbd>7fefffff ffffffff</kbd>
+</a>
+<td><a name="523">
+<p>1.7976931348623157e+308
+</a>
+
+<tr valign="baseline"><td><a name="528">
+<p>min positive normal number
+</a>
+<td><a name="524">
+<p><kbd>00100000 00000000</kbd>
+</a>
+<td><a name="401">
+<p>2.2250738585072014e-308
+</a>
+
+<tr valign="baseline"><td><a name="531">
+<p>max subnormal number
+</a>
+<td><a name="527">
+<p><kbd>000fffff ffffffff</kbd>
+</a>
+<td><a name="529">
+<p>2.2250738585072009e-308
+</a>
+
+<tr valign="baseline"><td><a name="534">
+<p>min positive subnormal number
+</a>
+<td><a name="530">
+<p><kbd>00000000 00000001</kbd>
+</a>
+<td><a name="532">
+<p>4.9406564584124654e-324
+</a>
+
+<tr valign="baseline"><td><a name="537">
+<p>+<img src="ncg_lib.doc.anc.gif">
+</a>
+<td><a name="533">
+<p><kbd>7ff00000 00000000</kbd>
+</a>
+<td><a name="535">
+<p> Infinity
+</a>
+
+<tr valign="baseline"><td><a name="540">
+<p>&#45;<img src="ncg_lib.doc.anc.gif">
+</a>
+<td><a name="536">
+<p><kbd>fff00000 00000000</kbd>
+</a>
+<td><a name="538">
+<p>&#45;Infinity
+</a>
+
+<tr valign="baseline"><td><a name="838">
+<p>Not-a-Number
+</a>
+<td><a name="864">
+<p><kbd>7ff80000 00000000</kbd>
+</a>
+<td><a name="865">
+<p> NaN
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="736">
+A NaN (Not a Number) can be represented by any of the many bit patterns
+that satisfy the definition of NaN. The hex values of the NaN shown in
+<a href="ncg_math.doc.html#446">Table&#160;2-5</a> is just one of the
+many bit patterns that can be used to represent a NaN.<p>
+</a>
+<a name="866">
+<h3><font size=5><i></i> Double-Extended Format (SPARC and PowerPC)
+</font></h3>
+</a>
+<a name="874">
+These floating-point environment&#39;s quadruple-precision format
+conforms to the IEEE definition of double-extended format. The
+quadruple-precision format occupies four 32-bit words and consists of
+three fields: a 112-bit fraction, f; a 15-bit biased exponent, e; and a
+1-bit sign, s. These are stored contiguously as shown in <a
+href="ncg_math.doc.html#741">Figure&#160;2-3</a>. <p>
+</a>
+<a name="557">
+In the SPARC architecture, the highest addressed 32-bit word contains
+the least significant 32-bits of the fraction, denoted f[31:0], while
+in the PowerPC architecture, the lowest addressed 32-bit word contains
+these bits. The next two 32-bit words (counting downwards on SPARC
+architecture and upwards on PowerPC architectures) contain f[63:32] and
+f[95:64], respectively. Bits 0:15 of the next word contain the 16 most
+significant bits of the fraction, f[111:96], with bit 0 being the least
+significant of these 16 bits, and bit 15 being the most significant bit
+of the entire fraction. Bits 16:30 contain the 15-bit biased exponent,
+e, with bit 16 being the least significant bit of the biased exponent
+and bit 30 being the most significant; and bit 31 contains the sign
+bit, s.<p>
+</a>
+<a name="876">
+<a href="ncg_math.doc.html#741">Figure&#160;2-3</a> numbers the bits as
+though the four contiguous 32-bit words were one 128-bit word in which
+bits 0:111 store the fraction, f; bits 112:126 store the 15-bit biased
+exponent, e; and bit 127 stores the sign bit, s.<p>
+</a>
+<a name="740">
+<p><img src="ncg_math.doc.anc14.gif"><p>
+</a>
+<a name="741">
+<p><center><h5>Figure &#160;2-3  Double-Extended Format (SPARC and
+PowerPC)
+</h5></center>
+</a><a name="837">
+The values of the bit patterns in the three fields f, e, and s,
+determine the value represented by the overall bit pattern. <p>
+</a>
+<a name="449">
+<a href="ncg_math.doc.html#449">Table&#160;2-6</a> shows the
+correspondence between the values of the three constituent fields and
+the value represented by the bit pattern in quadruple-precision format.
+u means don&#39;t care, because the value of the indicated field is
+irrelevant to the determination of values for the particular bit
+patterns. <br><br><Table Border="1" Cellpadding="5">
+<caption><a name="1957">
+<p><center><h4><font size=3>Table &#160;2-6      Values Represented by
+Bit Patterns (SPARC and PowerPC)
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="1961">
+<b>Double-Extended Bit Pattern (SPARC, PowerPC)</b><br>
+</a>
+<td><a name="1963">
+<b>Value</b><br>
+</a>
+
+<tr valign="baseline"><td><a name="1965">
+<p>0 &lt; <kbd>e</kbd> &lt; 32767
+</a>
+<td><a name="1968">
+<p>(&#45;1)<sup>s</sup> x 2<sup>e&#45;16383</sup> x 1.<kbd>f</kbd>
+(normal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="1970">
+<p><kbd>e</kbd> = 0, <kbd>f</kbd> <img src="chars/notequal.gif"> 0
+</a>
+<a name="4212">
+<p>(at least one bit in <kbd>f</kbd> is nonzero)<kbd></kbd>
+</a>
+<td><a name="1973">
+<p>(&#45;1)<sup>s</sup> x 2<sup>&#45;16382</sup> x 0.<kbd>f</kbd>
+(subnormal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="1975">
+<p><kbd>e</kbd> = 0, <kbd>f</kbd> = 0
+</a>
+<a name="4213">
+<p>(all bits in <kbd>f</kbd> are zero)<kbd></kbd>
+</a>
+<td><a name="1977">
+<p>(&#45;1)<sup>s</sup> x 0.0 (signed zero)
+</a>
+
+<tr valign="baseline"><td><a name="1979">
+<p><kbd>s</kbd> = 0, <kbd>e</kbd> = 32767, <kbd>f</kbd> = 0
+</a>
+<a name="4214">
+<p>(all bits in <kbd>f</kbd> are zero)<kbd></kbd>
+</a>
+<td><a name="1982">
+<p>+INF (positive infinity)
+</a>
+
+<tr valign="baseline"><td><a name="1984">
+<p><kbd>s</kbd> = 1, <kbd>e</kbd> = 32767; <kbd>f</kbd> = 0
+</a>
+<a name="4215">
+<p>(all bits in <kbd>f</kbd> are zero)<kbd></kbd>
+</a>
+<td><a name="1986">
+<p>-INF (negative infinity)
+</a>
+
+<tr valign="baseline"><td><a name="1988">
+<p><kbd>s</kbd> = u, <kbd>e</kbd> = 32767, <kbd>f</kbd> <img
+src="chars/notequal.gif"> 0
+</a>
+<a name="4216">
+<p>(at least one bit in <kbd>f</kbd> is nonzero)
+</a>
+<td><a name="1990">
+<p>NaN (Not-a-Number)
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+ <p>
+</a>
+<a name="743">
+Examples of important bit patterns in the quadruple-precision
+double-extended storage format are shown in <a
+href="ncg_math.doc.html#743">Table&#160;2-7</a>. The bit patterns in
+the second column appear as four 8-digit hexadecimal numbers. For the
+SPARC architecture, the left-most number is the value of the lowest
+addressed 32-bit word, and the right-most number is the value of the
+highest addressed 32-bit word, while for the PowerPC architecture, the
+left number is the highest addressed word, and the right number is the
+lowest addressed word. The maximum positive normal number is the
+largest finite number representable in the quadruple precision format.
+The minimum positive subnormal number is the smallest positive number
+representable in the quadruple precision format. The minimum positive
+normal number is often referred to as the underflow threshold. (The
+decimal values for the maximum and minimum normal and subnormal numbers
+are approximate; they are correct to the number of figures shown.)
+<br><br><Table Border="1" Cellpadding="5">
+<caption><a name="566">
+<p><center><h4><font size=3>Table &#160;2-7      Bit Patterns in
+Double-Extended Format (SPARC and PowerPC)
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="569">
+<b>Common Name</b><br>
+</a>
+<td><a name="561">
+<b>Bit Pattern (SPARC and PowerPC)</b><br>
+</a>
+<td><a name="567">
+<b>Decimal Value </b><br>
+</a>
+
+<tr valign="baseline"><td><a name="572">
+<p>+0
+</a>
+<td><a name="568">
+<p><kbd>00000000 00000000 00000000 00000000</kbd>
+</a>
+<td><a name="570">
+<p>0.0
+</a>
+
+<tr valign="baseline"><td><a name="575">
+<p>&#45;0
+</a>
+<td><a name="571">
+<p><kbd>80000000 00000000 00000000 00000000</kbd>
+</a>
+<td><a name="573">
+<p>&#45;0.0
+</a>
+
+<tr valign="baseline"><td><a name="820">
+<p> 1
+</a>
+<td><a name="822">
+<p><kbd>3fff0000 00000000 00000000 00000000</kbd>
+</a>
+<td><a name="824">
+<p>1.0
+</a>
+
+<tr valign="baseline"><td><a name="774">
+<p> 2
+</a>
+<td><a name="814">
+<p><kbd>40000000 00000000 00000000 00000000</kbd>
+</a>
+<td><a name="816">
+<p>2.0
+</a>
+
+<tr valign="baseline"><td><a name="578">
+<p>max normal
+</a>
+<td><a name="574">
+<p><kbd>7ffeffff ffffffff ffffffff ffffffff</kbd>
+</a>
+<td><a name="576">
+<p>1.1897314953572317650857593266280070e+4932
+</a>
+
+<tr valign="baseline"><td><a name="581">
+<p>min normal
+</a>
+<td><a name="577">
+<p><kbd>00010000 00000000 00000000 00000000</kbd>
+</a>
+<td><a name="579">
+<p>3.3621031431120935062626778173217526e-4932
+</a>
+
+<tr valign="baseline"><td><a name="584">
+<p>max subnormal
+</a>
+<td><a name="580">
+<p><kbd>0000ffff ffffffff ffffffff ffffffff</kbd>
+</a>
+<td><a name="582">
+<p>3.3621031431120935062626778173217520e-4932
+</a>
+
+<tr valign="baseline"><td><a name="587">
+<p>min pos subnormal
+</a>
+<td><a name="583">
+<p><kbd>00000000 00000000 00000000 00000001</kbd>
+</a>
+<td><a name="585">
+<p>6.4751751194380251109244389582276466e-4966
+</a>
+
+<tr valign="baseline"><td><a name="590">
+<p>+<img src="ncg_lib.doc.anc.gif">
+</a>
+<td><a name="586">
+<p><kbd>7fff0000 00000000 00000000 00000000</kbd>
+</a>
+<td><a name="588">
+<p>+Infinity
+</a>
+
+<tr valign="baseline"><td><a name="592">
+<p>&#45;<img src="ncg_lib.doc.anc.gif">
+</a>
+<td><a name="589">
+<p><kbd>ffff0000 00000000 00000000 00000000</kbd>
+</a>
+<td><a name="591">
+<p>-Infinity
+</a>
+
+<tr valign="baseline"><td><a name="596">
+<p>Not-a-Number
+</a>
+<td><a name="593">
+<p><kbd>7fff8000 00000000 00000000 00000000</kbd>
+</a>
+<td><a name="594">
+<p>NaN
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="372">
+The hex values of the <kbd>NaN</kbd>s shown in <a
+href="ncg_math.doc.html#743">Table&#160;2-7</a> are just two of the
+many bit patterns that can be used to represent <kbd>NaN</kbd>s. <p>
+</a>
+<a name="526">
+<h3><font size=5><i></i> Double-Extended Format (Intel)
+</font></h3>
+</a>
+<a name="553">
+This floating-point environment&#39;s double-extended format conforms
+to the IEEE definition of double-extended formats. It consists of four
+fields: a 63-bit fraction, <kbd>f</kbd>; a 1-bit explicit leading
+significand bit, <kbd>j</kbd>; a 15-bit biased exponent, <kbd>e</kbd>;
+and a 1-bit sign, <kbd>s</kbd>. <p>
+</a>
+<a name="450">
+In the family of Intel architectures, these fields are stored
+contiguously in ten successively addressed 8-bit bytes. However, the
+UNIX System V Application Binary Interface Intel 386 Processor
+Supplement (Intel ABI) requires that double-extended parameters and
+results occupy three consecutively addressed 32-bit words in the stack,
+with the most significant 16 bits of the highest addressed word being
+unused, as shown in <a
+href="ncg_math.doc.html#733">Figure&#160;2-4</a>. <p>
+</a>
+<a name="949">
+The lowest addressed 32-bit word contains the least significant 32 bits
+of the fraction, <kbd>f</kbd>[31:0], with bit 0 being the least
+significant bit of the entire fraction and bit 31 being the most
+significant of the 32 least significant fraction bits. In the middle
+addressed 32-bit word, bits 0:30 contain the 31 most significant bits
+of the fraction, <kbd>f</kbd>[62:32], with bit 0 being the least
+significant of these 31 most significant fraction bits, and bit 30
+being the most significant bit of the entire fraction; bit 31 of this
+middle addressed 32-bit word contains the explicit leading significand
+bit, <kbd>j</kbd>.<p>
+</a>
+<a name="950">
+In the highest addressed 32-bit word, bits 0:14 contain the 15-bit
+biased exponent, <kbd>e</kbd>, with bit 0 being the least significant
+bit of the biased exponent and bit 14 being the most significant; and
+bit 15 contains the sign bit, <kbd>s</kbd>. Although the highest order
+16 bits of this highest addressed 32-bit word are unused by the family
+of Intel architectures, their presence is essential for conformity to
+the Intel ABI, as indicated above. <p>
+</a>
+<a name="951">
+<a href="ncg_math.doc.html#733">Figure&#160;2-4</a> numbers the bits as
+though the three contiguous 32-bit words were one 96-bit word in which
+bits 0:62 store the 63-bit fraction, <kbd>f</kbd>; bit 63 stores the
+explicit leading significand bit, <kbd>j</kbd>; bits 64:78 store the
+15-bit biased exponent, <strong>e</strong>; and bit 79 stores the sign
+bit, <kbd>s</kbd>. <p>
+</a>
+<a name="706">
+<p><img src="ncg_math.doc.anc15.gif"><p>
+</a>
+<a name="733">
+<p><center><h5>Figure &#160;2-4  Double-Extended Format (Intel)
+</h5></center>
+</a><a name="730">
+The values of the bit patterns in the four fields <kbd>f</kbd>,
+<kbd>j</kbd>, <kbd>e</kbd> and <kbd>s</kbd>, determine the value
+represented by the overall bit pattern. <p>
+</a>
+<a name="952">
+<a href="ncg_math.doc.html#952">Table&#160;2-8</a> shows the
+correspondence between the counting number values of the four
+constituent field and the value represented by the bit pattern.
+<em>u</em> means <em>don&#39;t care</em>, because the value of the
+indicated field is irrelevant to the determination of value for the
+particular bit patterns. <br><br><Table Border="1" Cellpadding="5">
+<caption><a name="719">
+<p><center><h4><font size=3>Table &#160;2-8      Values Represented by
+Bit Patterns (Intel)
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="783">
+<b>Double-Extended Bit Pattern (Intel)</b><br>
+</a>
+<td><a name="787">
+<b>Value</b><br>
+</a>
+
+<tr valign="baseline"><td><a name="788">
+<p><kbd>j</kbd> = 0, 0 &lt; e &lt;32767
+</a>
+<td><a name="817">
+<p>Unsupported
+</a>
+
+<tr valign="baseline"><td><a name="823">
+<p><kbd>j</kbd> = 1, 0 &lt; e &lt; 32767
+</a>
+<td><a name="825">
+<p>(&#45;1)<sup>s</sup> x 2<sup>e&#45;16383</sup> x 1.<kbd>f</kbd>
+(normal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="826">
+<p><kbd>j</kbd> = 0, <kbd>e</kbd> = 0; <kbd>f</kbd> <img
+src="chars/notequal.gif"> 0
+</a>
+<a name="827">
+<p>(at least one bit in <kbd>f</kbd> is nonzero)
+</a>
+<td><a name="829">
+<p>(&#45;1)<sup>s</sup> x 2<sup>&#45;16382</sup> x 0.<kbd>f</kbd>
+(subnormal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="830">
+<p><kbd>j</kbd> = 1, <kbd>e</kbd> = 0
+</a>
+<td><a name="831">
+<p>(&#45;1)<sup>s</sup> x 2<sup>&#45;16382</sup> x 1.<kbd>f</kbd>
+(pseudo-denormal numbers)
+</a>
+
+<tr valign="baseline"><td><a name="844">
+<p><kbd>j</kbd> = 0, <kbd>e</kbd> = 0, <kbd>f</kbd> = 0
+</a>
+<a name="880">
+<p> (all bits in f are zero)
+</a>
+<td><a name="891">
+<p>(&#45;1)<sup>s</sup> x 0.0 (signed zero)
+</a>
+
+<tr valign="baseline"><td><a name="892">
+<p><kbd>j</kbd> = 1; <kbd>s</kbd> = 0; <kbd>e</kbd> = 32767;
+<kbd>f</kbd> = 0 <br>(all bits in <kbd>f</kbd> are zero)
+</a>
+<td><a name="912">
+<p>+INF (positive infinity)
+</a>
+
+<tr valign="baseline"><td><a name="913">
+<p><kbd>j</kbd> = 1; <kbd>s</kbd> = 1; <kbd>e</kbd> = 32767;
+<kbd>f</kbd> = 0 <br> (all bits in <kbd>f</kbd> are zero)
+</a>
+<td><a name="914">
+<p> &#45;INF (negative infinity)
+</a>
+
+<tr valign="baseline"><td><a name="915">
+<p><kbd>j</kbd> = 1; <kbd>s</kbd> = <em>u</em>; <kbd>e</kbd> = 32767;
+<kbd>f</kbd> = .1<em>uuu</em> &#45;&#45; <em>uu</em>
+</a>
+<td><a name="916">
+<p> QNaN (quiet <kbd>NaNs)</kbd>
+</a>
+
+<tr valign="baseline"><td><a name="917">
+<p><kbd>j</kbd> = 1; <kbd>s</kbd> = <em>u</em>; <kbd>e</kbd> = 32767;
+<kbd>f</kbd> = .0<em>uuu</em> &#45;&#45; <em>uu</em> <img
+src="chars/notequal.gif"> 0
+</a>
+<a name="918">
+<p> (at least one of the<em> u</em> in <kbd>f</kbd> is nonzero)
+</a>
+<td><a name="919">
+<p> SNaN (signaling <kbd>NaNs)</kbd>
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+ <p>
+</a>
+<a name="377">
+Notice that bit patterns in double-extended format do <em>not </em>have
+an implicit leading significand bit. The leading significand bit is
+given explicitly as a separate field, <kbd>j</kbd>, in the
+double-extended format. However, when <kbd>e</kbd> is nonzero,
+any bit pattern with <kbd>j</kbd> = 0 is
+unsupported in the sense that using such a bit pattern as an operand in
+floating-point operations provokes an invalid operation exception.<p>
+</a>
+<a name="953">
+The union of the disjoint fields <kbd>j</kbd> and <kbd>f</kbd> in the
+double extended format is called the <em>significand</em>. When
+<kbd>e</kbd> &lt; 32767 and <kbd>j</kbd> = 1, or when <kbd>e</kbd> = 0
+and <kbd>j</kbd> = 0, the significand is formed by inserting the binary
+radix point between the leading significand bit, <kbd>j</kbd>, and the
+fraction&#39;s most significant bit.<p>
+</a>
+<a name="954">
+For the double-extended format, the difference between a normal number
+and a subnormal number is that the explicit leading bit of the
+significand of a normal number is 1, whereas the explicit leading bit
+of the significand of a subnormal number is 0 and the biased exponent
+field e must also be 0. Subnormal numbers in double-extended format
+were called double-extended format denormalized numbers in IEEE
+Standard 754.<p>
+</a>
+<a name="4186">
+Examples of important bit patterns in the double-extended storage
+format appear in <a href="ncg_math.doc.html#4186">Table&#160;2-9</a>.
+The bit patterns in the second column appear as one <br>4-digit
+hexadecimal counting number, which is the value of the 16 least
+significant bits of the highest addressed 32-bit word (recall that the
+most significant 16 bits of this highest addressed 32-bit word are
+unused, so their value is not shown), followed by two 8-digit
+hexadecimal counting numbers, of which the left one is the value of the
+middle addressed 32-bit word, and the right one is the value of the
+lowest addressed 32-bit word. The maximum positive normal number is the
+largest finite number representable in the Intel double-extended
+format. The minimum positive subnormal number is the smallest positive
+number representable in the double-extended format. The minimum
+positive normal number is often referred to as the underflow threshold.
+(The decimal values for the maximum and minimum normal and subnormal
+numbers are approximate; they are correct to the number of figures
+shown.)<br><br><Table Border="1" Cellpadding="5">
+<caption><a name="960">
+<p><center><h4><font size=3>Table &#160;2-9      Bit Patterns in
+Double-Extended Format and their Values (Intel)
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="963">
+<b>Common Name</b><br>
+</a>
+<td><a name="964">
+<b>Bit Pattern (Intel)</b><br>
+</a>
+<td><a name="965">
+<b>Decimal Value </b><br>
+</a>
+
+<tr valign="baseline"><td><a name="966">
+<p>+0
+</a>
+<td><a name="967">
+<p><kbd>0000 00000000 00000000</kbd>
+</a>
+<td><a name="968">
+<p>0.0
+</a>
+
+<tr valign="baseline"><td><a name="969">
+<p>&#45;0
+</a>
+<td><a name="970">
+<p><kbd>8000 00000000 00000000</kbd>
+</a>
+<td><a name="971">
+<p>&#45;0.0
+</a>
+
+<tr valign="baseline"><td><a name="972">
+<p> 1
+</a>
+<td><a name="973">
+<p><kbd>3fff 80000000 00000000</kbd>
+</a>
+<td><a name="974">
+<p>1.0
+</a>
+
+<tr valign="baseline"><td><a name="975">
+<p> 2
+</a>
+<td><a name="976">
+<p><kbd>4000 80000000 00000000</kbd>
+</a>
+<td><a name="977">
+<p>2.0
+</a>
+
+<tr valign="baseline"><td><a name="978">
+<p>max normal
+</a>
+<td><a name="979">
+<p><kbd>7ffe ffffffff ffffffff</kbd>
+</a>
+<td><a name="980">
+<p>1.18973149535723176505e+4932
+</a>
+
+<tr valign="baseline"><td><a name="981">
+<p>min positive normal
+</a>
+<td><a name="982">
+<p><kbd>0001 80000000 00000000</kbd>
+</a>
+<td><a name="983">
+<p>3.36210314311209350626e-4932
+</a>
+
+<tr valign="baseline"><td><a name="984">
+<p>max subnormal
+</a>
+<td><a name="985">
+<p><kbd>0000 7fffffff ffffffff</kbd>
+</a>
+<td><a name="986">
+<p>3.36210314311209350608e-4932
+</a>
+
+<tr valign="baseline"><td><a name="987">
+<p>min positive subnormal
+</a>
+<td><a name="988">
+<p><kbd>0000 00000000 00000001</kbd>
+</a>
+<td><a name="989">
+<p>3.64519953188247460253e-4951
+</a>
+
+<tr valign="baseline"><td><a name="990">
+<p>+<img src="ncg_lib.doc.anc.gif">
+</a>
+<td><a name="991">
+<p><kbd>7fff 80000000 00000000</kbd>
+</a>
+<td><a name="992">
+<p>+Infinity
+</a>
+
+<tr valign="baseline"><td><a name="993">
+<p>&#45;<img src="ncg_lib.doc.anc.gif">
+</a>
+<td><a name="994">
+<p><kbd>ffff 80000000 00000000</kbd>
+</a>
+<td><a name="995">
+<p>-Infinity
+</a>
+
+<tr valign="baseline"><td><a name="996">
+<p>quiet NaN with greatest fraction
+</a>
+<td><a name="997">
+<p><kbd>7fff ffffffff ffffffff</kbd>
+</a>
+<td><a name="998">
+<p>QNaN
+</a>
+
+<tr valign="baseline"><td><a name="999">
+<p>quiet NaN with least fraction
+</a>
+<td><a name="1000">
+<p><kbd>7fff c0000000 00000000</kbd>
+</a>
+<td><a name="1001">
+<p>QNaN
+</a>
+
+<tr valign="baseline"><td><a name="1002">
+<p>signaling NaN with greatest fraction
+</a>
+<td><a name="1003">
+<p><kbd>7fff bfffffff ffffffff</kbd>
+</a>
+<td><a name="1004">
+<p>SNaN
+</a>
+
+<tr valign="baseline"><td><a name="1005">
+<p>signaling NaN with least fraction
+</a>
+<td><a name="1006">
+<p><kbd>7fff 80000000 00000001</kbd>
+</a>
+<td><a name="1007">
+<p>SNaN
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="1008">
+A <kbd>NaN</kbd> (Not a Number) can be represented by any of the many
+bit patterns that satisfy the definition of <kbd>NaN</kbd>. The hex
+values of the <kbd>NaN</kbd>s shown in <a
+href="ncg_math.doc.html#4186">Table&#160;2-9</a> illustrate that the
+leading (most significant) bit of the fraction field determines whether
+a <kbd>NaN</kbd> is quiet (leading fraction bit = 1) or signaling
+(leading fraction bit = 0).<p>
+</a>
+<a name="374">
+<h3><font size=5><i></i> Ranges and Precisions in Decimal
+Representation
+</font></h3>
+</a>
+<a name="414">
+This section covers the notions of range and precision for a given
+storage format. It includes the ranges and precisions corresponding to
+the IEEE single and double formats, and to the implementations of IEEE
+double-extended format to SPARC, PowerPC, and Intel architectures. In
+explaining the notions of range and precision, reference is made to the
+IEEE single format.<p>
+</a>
+<a name="388">
+The IEEE standard specifies that 32 bits be used to represent a
+floating point number in single format. Because there are only finitely
+many combinations of 32 zeroes and ones, only finitely many numbers can
+be represented by 32 bits. <p>
+</a>
+<a name="482">
+One natural question is:<p>
+</a>
+<dl>
+<a name="483">
+<p><dd>What are the decimal representations of the largest and smallest
+positive numbers that can be represented in this particular format?
+</a><p>
+</dl>
+<a name="484">
+Rephrase the question and introduce the notion of range:<p>
+</a>
+<dl>
+<a name="485">
+<p><dd>What is the range, in decimal notation, of numbers that can be
+represented by the IEEE single format?
+</a><p>
+</dl>
+<a name="389">
+Taking into account the precise definition of IEEE single format, you
+can prove that the range of floating-point numbers that can be
+represented in IEEE single format (if restricted to positive normalized
+numbers) is as follows:<p>
+</a>
+<a name="498">
+<pre>   1.175...x (10<sup>-38</sup>) to 3.402...x (10<sup>+38</sup>)
+</pre>
+</a>
+<a name="390">
+A second question refers to the precision (or as many people refer to
+it, the accuracy, or the number of significant digits) of the numbers
+represented in a given format. These notions are explained by looking
+at some pictures and examples.<p>
+</a>
+<a name="699">
+The IEEE standard for binary floating-point arithmetic specifies the
+set of numerical values representable in the single format. Remember
+that this set of numerical values is described as a set of binary
+floating-point numbers. The significand of the IEEE single format has
+23 bits, which together with the implicit leading bit, yield 24 digits
+(bits) of (binary) precision. <p>
+</a>
+<a name="460">
+You obtain a different set of numerical values by marking the
+numbers:<p>
+</a>
+<a name="877">
+<pre>   <em>x</em> = (<em>x</em><sub>1</sub>.<em>x</em><sub>2</sub><em>x</em><sub>3</sub>...<em>x</em><sub>q</sub>) x (10<sup>n</sup>)
+</pre>
+</a>
+<a name="739">
+(representable by <kbd>q</kbd> decimal digits in the significand) on
+the number line. <p>
+</a>
+<a name="878">
+<a href="ncg_math.doc.html#742">Figure&#160;2-5</a> exemplifies this
+situation:<p>
+</a>
+<a name="737">
+<p><img src="ncg_math.doc.anc16.gif"><p>
+</a>
+<a name="742">
+<p><center><h5>Figure &#160;2-5  Comparison of a Set of Numbers Defined
+by <br>
+Digital and Binary Representation
+</h5></center>
+</a><a name="881">
+Notice that the two sets are different. Therefore, estimating the
+number <kbd>q</kbd> of significant decimal digits corresponding to 24
+significant binary digits, requires reformulating the problem. <p>
+</a>
+<a name="451">
+Reformulate the problem in terms of converting floating-point numbers
+between binary representations (the internal format used by the
+computer) and the decimal format (the format users are usually
+interested in). In fact, you may want to convert from decimal to binary
+and back to decimal, as well as convert from binary to decimal and back
+to binary. <p>
+</a>
+<a name="452">
+It is important to notice that because the sets of numbers are
+different, conversions are in general inexact. If done correctly,
+converting a number from one set to a number in the other set results
+in choosing one of the two neighboring numbers from the second set
+(which one specifically is a question related to rounding).<p>
+</a>
+<a name="453">
+Consider some examples. Assume you are trying to represent the number
+with the following decimal representation in IEEE single format:<p>
+</a>
+<a name="500">
+<pre>   <kbd>x = x1.x2 x3... x 10n
+</kbd></pre>
+</a>
+<a name="502">
+In the above example, the information contained in <em>x</em> has to be
+coded in a 32-bit word. Generally, this might be impossible (if there
+are too many digits in <em>x</em>), for example, some of the
+information might not fit in 32 bits. For example, use:<p>
+</a>
+<a name="373">
+<pre>   <kbd>y = 838861.2, z = 1.3
+</kbd></pre>
+</a>
+<a name="376">
+and run the following FORTRAN program: <br><br><Table Border="1"
+Cellpadding="5">
+<caption></caption>
+
+<tr valign="baseline"><td><a name="383">
+<pre>   REAL Y, Z
+   Y = 838861.2
+   Z = 1.3
+   WRITE(*,40) Y
+40         FORMAT("y: ",1PE18.11)
+   WRITE(*,50) Z
+50         FORMAT("z: ",1PE18.11)</pre>
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="399">
+The output from this program should be similar to: <br><br><Table
+Border="1" Cellpadding="5">
+<caption></caption>
+
+<tr valign="baseline"><td><a name="382">
+<pre>y: 8.38861187500E+05
+z: 1.29999995232E+00 </pre>
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="410">
+The difference between the value 8.388612 x 10<sup>5</sup> assigned to
+<em>y</em> and the value printed out is 0.000000125, which is seven
+decimal orders of magnitude smaller than <em>y</em>. The accuracy of
+representing <em>y</em> in IEEE single format is about 6 to 7
+significant digits, or that <em>y</em> has about <em>six</em>
+<em>significant</em> digits if it is to be represented in IEEE single
+format. <p>
+</a>
+<a name="381">
+Similarly, the difference between the value 1.3 assigned to <em>z</em>
+and the value printed out is 0.00000004768, which is eight decimal
+orders of magnitude smaller than <em>z</em>. The accuracy of
+representing <em>z</em> in IEEE single format is about 7 to 8
+significant digits, or that <em>z</em> has about seven <em>significant
+digits</em> if it is to be represented in IEEE single format. <p>
+</a>
+<a name="489">
+Now formulate the question: <p>
+</a>
+<dl>
+<a name="494">
+<p><dd>Assume you convert a decimal floating point number <em>a</em> to
+its IEEE single format binary representation <em>b</em>, and then
+translate <em>b</em> back to a decimal number <em>c</em>; how many
+orders of magnitude are between <em>a</em> and <em>a</em> -
+<em>c</em>?
+</a><p>
+</dl>
+<a name="454">
+Rephrase the question: <p>
+</a>
+<dl>
+<a name="645">
+<p><dd>What is the number of <em>significant decimal digits</em> of
+<em>a</em> in the IEEE single format representation, or how many
+decimal digits are to be trusted as accurate when one represents
+<em>x</em> in IEEE single format?
+</a><p>
+</dl>
+<a name="413">
+The number of significant decimal digits is always between 6 and 9,
+that is, at least 6 digits, but not more than 9 digits are accurate
+(with the exception of cases when the conversions are exact, when
+infinitely many digits could be accurate). <p>
+</a>
+<a name="411">
+Conversely, if you convert a binary number in IEEE single format to a
+decimal number, and then convert it back to binary, generally, you need
+to use at least 9 decimal digits to ensure that after these two
+conversions you obtain the number you started from.<p>
+</a>
+<a name="555">
+The complete picture is given in <a
+href="ncg_math.doc.html#555">Table&#160;2-10</a>: <br><br><Table
+Border="1" Cellpadding="5">
+<caption><a name="4700">
+<p><center><h4><font size=3>Table &#160;2-10     Range and Precision of
+Storage Formats
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="4710">
+<b>Format </b><br>
+</a>
+<a name="4711">
+<b></b><br>
+</a>
+<td><a name="4713">
+<b>Significant Digits (Binary)</b><br>
+</a>
+<td><a name="4715">
+<b>Smallest Positive Normal Number</b><br>
+</a>
+<td><a name="4717">
+<b>Largest Positive Number</b><br>
+</a>
+<td><a name="4719">
+<b>Significant Digits (Decimal)</b><br>
+</a>
+
+<tr valign="baseline"><td><a name="4731">
+<p>single
+</a>
+<td><a name="4733">
+<p>24
+</a>
+<td><a name="4735">
+<p>1.175... 10<sup>-38</sup>
+</a>
+<td><a name="4737">
+<p>3.402... 10<sup>+38</sup>
+</a>
+<td><a name="4739">
+<p>6-9
+</a>
+
+<tr valign="baseline"><td><a name="4741">
+<p>double
+</a>
+<td><a name="4743">
+<p>53
+</a>
+<td><a name="4745">
+<p>2.225...&nbsp;10<sup>-308</sup>
+</a>
+<td><a name="4747">
+<p>1.797...&nbsp;10<sup>+308</sup>
+</a>
+<td><a name="4749">
+<p>15-17
+</a>
+
+<tr valign="baseline"><td><a name="4751">
+<p>double extended (SPARC, PowerPC)
+</a>
+<td><a name="4753">
+<p>113
+</a>
+<td><a name="4755">
+<p>3.362...&nbsp;10<sup>-4932</sup>
+</a>
+<td><a name="4757">
+<p>1.189...&nbsp;10<sup>+4932</sup>
+</a>
+<td><a name="4759">
+<p>33-36
+</a>
+
+<tr valign="baseline"><td><a name="4761">
+<p>double extended (Intel)
+</a>
+<td><a name="4763">
+<p>64
+</a>
+<td><a name="4765">
+<p>3.362...&nbsp;10<sup>-4932</sup>
+</a>
+<td><a name="4767">
+<p>1.189...&nbsp;10<sup>+4932</sup>
+</a>
+<td><a name="4769">
+<p>18-21
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="746">
+<p><hr size="8" align="left" width="30%" noshade>
+<h2><font size=6><i></i> Underflow
+</font></h2>
+</a>
+<a name="747">
+Underflow occurs, roughly speaking, when the result of an arithmetic
+operation is so small that it cannot be stored in its intended
+destination format without suffering a rounding error that is larger
+than usual. <p>
+</a>
+<a name="748">
+<h3><font size=5><i></i> Underflow Thresholds
+</font></h3>
+</a>
+<a name="749">
+<a href="ncg_math.doc.html#749">Table&#160;2-11</a> shows the underflow
+thresholds for single, double, and double-extended precision.
+<br><br><Table Border="1" Cellpadding="5">
+<caption><a name="415">
+<p><center><h4><font size=3>Table &#160;2-11     Underflow Thresholds
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="421">
+<b>Destination Precision </b><br>
+</a>
+<td colspan=2 rowspan=1><a name="465">
+<b>Underflow Threshold </b><br>
+</a>
+
+<tr valign="baseline"><td><a name="467">
+<p>single
+</a>
+<td><a name="468">
+<p>smallest&nbsp;normal&nbsp;number
+</a>
+<a name="469">
+<p>largest&nbsp;subnormal&nbsp;number
+</a>
+<td><a name="470">
+<p>1.17549435e-38
+</a>
+<a name="471">
+<p>1.17549421e-38
+</a>
+
+<tr valign="baseline"><td><a name="472">
+<p>double
+</a>
+<td><a name="473">
+<p>smallest&nbsp;normal&nbsp;number
+</a>
+<a name="474">
+<p>largest&nbsp;subnormal&nbsp;number
+</a>
+<td><a name="475">
+<p>2.2250738585072014e-308
+</a>
+<a name="476">
+<p>2.2250738585072009e-308
+</a>
+
+<tr valign="baseline"><td><a name="477">
+<p>double-extended (SPARC, PowerPC)
+</a>
+<td><a name="478">
+<p>smallest&nbsp;normal&nbsp;number
+</a>
+<a name="479">
+<p>largest&nbsp;subnormal&nbsp;number
+</a>
+<td><a name="480">
+<p>3.3621031431120935062626778173217526e-4932
+</a>
+<a name="481">
+<p>3.3621031431120935062626778173217520e-4932
+</a>
+
+<tr valign="baseline"><td><a name="541">
+<p>double-extended (Intel)
+</a>
+<td><a name="542">
+<p>smallest&nbsp;normal&nbsp;number
+</a>
+<a name="543">
+<p>largest&nbsp;subnormal&nbsp;number
+</a>
+<td><a name="544">
+<p>3.36210314311209350626e-4932
+</a>
+<a name="546">
+<p>3.36210314311209350590e-4932
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="888">
+The positive subnormal numbers are those numbers between the smallest
+normal number and zero. Subtracting two (positive) tiny numbers that
+are near the smallest normal number might produce a subnormal number.
+Or, dividing the smallest positive normal number by two produces a
+subnormal result. <p>
+</a>
+<a name="455">
+The presence of subnormal numbers provides greater precision to
+floating-point calculations that involve small numbers, although the
+subnormal numbers themselves have fewer bits of precision than normal
+numbers. Producing subnormal numbers (rather than returning the answer
+zero) when the mathematically correct result has magnitude less than
+the smallest positive normal number is known as gradual underflow. <p>
+</a>
+<a name="750">
+There are several other ways to deal with such <em>underflow</em>
+results. One way, common in the past, was to flush those results to
+zero. This method is known as <em>Store 0</em> and was the default on
+most mainframes before the advent of the IEEE Standard. <p>
+</a>
+<a name="889">
+The mathematicians and computer designers who drafted IEEE Standard 754
+considered several alternatives while balancing the desire for a
+mathematically robust solution with the need to create a standard that
+could be implemented efficiently. <p>
+</a>
+<a name="752">
+<h3><font size=5><i></i> How Does IEEE Arithmetic Treat Underflow?
+</font></h3>
+</a>
+<a name="753">
+IEEE Standard 754 chooses gradual underflow as the preferred method for
+dealing with underflow results. This method amounts to defining two
+representations for stored values, normal and subnormal. <p>
+</a>
+<a name="754">
+Recall that the IEEE format for a normal floating-point number is:<p>
+</a>
+<a name="755">
+<center>(-1)<sup><em>s</em></sup> x 2<sup>(<em>e</em>-bias)</sup> x 1.<em>f</em></center><p>
+</a>
+<a name="756">
+where <em>s</em> is the sign bit, <em>e</em> is the biased exponent,
+and <em>f</em> is the fraction. Only <em>s</em>, <em>e</em>, and
+<em>f</em> need to be stored to fully specify the number. Because the
+implicit leading bit of the significand is defined to be 1 for normal
+numbers, it need not be stored. <p>
+</a>
+<a name="402">
+The smallest positive normal number that can be stored, then, has the
+negative exponent of greatest magnitude and a fraction of all zeros.
+Even smaller numbers can be accommodated by considering the leading bit
+to be zero rather than one. In the double-precision format, this
+effectively extends the minimum exponent from 10<sup>-308</sup> to
+10<sup>-324</sup>, because
+the fraction part is 52 bits long (roughly 16 decimal digits.) These
+are the <em>subnormal</em> numbers; returning a subnormal number
+(rather than flushing an underflowed result to zero) is <em>gradual
+underflow</em>. <p>
+</a>
+<a name="758">
+Clearly, the smaller a subnormal number, the fewer nonzero bits in its
+fraction; computations producing subnormal results do not enjoy the
+same bounds on relative roundoff error as computations on normal
+operands. However, the key fact about gradual underflow is that its use
+implies: <p>
+</a>
+<ul><a name="759">
+<p><li>Underflowed results need never suffer a loss of accuracy any
+greater than that which results from ordinary roundoff error.
+</a>
+<a name="760">
+<p><li>Addition, subtraction, comparison, and remainder are always
+exact when the result is very small.
+</a>
+</ul><a name="761">
+Recall that the IEEE format for a subnormal floating-point number
+is:<p>
+</a>
+<a name="762">
+<center>(-1)<sup><em>s</em></sup> x 2<sup>(-bias+1)</sup> x 0.<em>f</em></center><p>
+</a>
+<a name="763">
+where <em>s</em> is the sign bit, the biased exponent <em>e</em> is
+zero, and <em>f</em> is the fraction. Note that the implicit
+power-of-two bias is one greater than the bias in the normal format,
+and the implicit leading bit of the fraction is zero. <p>
+</a>
+<a name="764">
+Gradual underflow allows you to extend the lower range of representable
+numbers. It is not <em>smallness</em> that renders a value
+questionable, but its associated error. Algorithms exploiting subnormal
+numbers have smaller error bounds than other systems. The next section
+provides some mathematical justification for gradual underflow. <p>
+</a>
+<a name="765">
+<h3><font size=5><i></i> Why Gradual Underflow?
+</font></h3>
+</a>
+<a name="766">
+The purpose of subnormal numbers is not to avoid underflow/overflow
+entirely, as some other arithmetic models do. Rather, subnormal numbers
+eliminate underflow as a cause for concern for a variety of
+computations (typically, multiply followed by add). For a more detailed
+discussion, see &#34;<em>Underflow and the Reliability of Numerical
+Software</em>&#34; by James Demmel and &#34;<em>Combatting the Effects
+of Underflow and Overflow in Determining Real Roots of
+Polynomials</em>&#34; by S. Linnainmaa.<p>
+</a>
+<a name="767">
+The presence of subnormal numbers in the arithmetic means that
+untrapped underflow (which implies loss of accuracy) cannot occur on
+addition or subtraction. If <em>x</em> and <em>y</em> are within a
+factor of two, then <em>x</em> &#45; y is error-free. This is critical
+to a number of algorithms that effectively increase the working
+precision at critical places in algorithms. <p>
+</a>
+<a name="768">
+In addition, gradual underflow means that errors due to underflow are
+no worse than usual roundoff error. This is a much stronger statement
+than can be made about any other method of handling underflow, and this
+fact is one of the best justifications for gradual underflow. <p>
+</a>
+<a name="769">
+<h3><font size=5><i></i> Error Properties of Gradual Underflow
+</font></h3>
+</a>
+<a name="770">
+Most of the time, floating-point results are rounded: <p>
+</a>
+<dl>
+<a name="360">
+<p><dd><em>computed result = (true result) </em>&#177; roundoff
+</a><p>
+</dl>
+<a name="504">
+In IEEE arithmetic, with rounding mode to nearest,<p>
+</a>
+<dl>
+<a name="646">
+<p><dd>0 <img src="chars/lt_equal.gif"> roundoff <img
+src="chars/lt_equal.gif"> 1/2 <em>ulp</em>
+</a><p>
+</dl>
+<a name="558">
+of the computed result. <p>
+</a>
+<a name="775">
+<em>ulp</em> is an acronym for Unit in the Last Place. The least
+significant bit of the fraction of a number in its standard
+representation, is the <em>last</em> place. If the roundoff error is
+less than or equal to one half unit in the last place, then the
+calculation is correctly rounded. <p>
+</a>
+<a name="4293">
+For example, an <em>ulp</em> of unity for each floating point data type
+would be
+as shown in <a
+href="ncg_math.doc.html#4293">Table&#160;2-12</a>:<br><br><Table
+Border="1" Cellpadding="5">
+<caption><a name="4298">
+<p><center><h4><font size=3>Table &#160;2-12     <em>ulp</em> Values
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="4302">
+<b>Precision</b><br>
+</a>
+<td><a name="4304">
+<b>Value</b><br>
+</a>
+
+<tr valign="baseline"><td><a name="4306">
+<p>single
+</a>
+<td><a name="4308">
+<p>ulp(1) = 2<sup>-23</sup> ~ 1.192092896e-07
+</a>
+
+<tr valign="baseline"><td><a name="4310">
+<p>double
+</a>
+<td><a name="4312">
+<p>ulp(1) = 2<sup>-52</sup> ~ 2.22044604925031308e-16
+</a>
+
+<tr valign="baseline"><td><a name="4314">
+<p>quadruple
+</a>
+<td><a name="4316">
+<p>ulp(1) = 2<sup>-113</sup> ~ 1.92592994438723585305597794258492732e-34
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="776">
+Recall that only a finite set of numbers can be exactly represented in
+any computer arithmetic. As the magnitudes of numbers get smaller and
+approach zero, the gap between neighboring representable numbers never
+widens but narrows. Conversely, as the magnitude of numbers gets
+larger, the gap between neighboring representable numbers widens. <p>
+</a>
+<a name="361">
+For example, imagine you are using a binary arithmetic that has only 3
+bits of precision. Then, between any two powers of 2, there are 2<sup>3</sup>
+= 8 representable numbers, as shown in <a
+href="ncg_math.doc.html#684">Figure&#160;2-6</a>. <p>
+</a>
+<a name="683">
+ <p><img src="ncg_math.doc.anc21.gif"><p>
+</a>
+<a name="684">
+<p><center><h5>Figure &#160;2-6  Number Line
+</h5></center>
+</a><a name="780">
+The number line shows how the gap between numbers doubles from one
+exponent to the next. <p>
+</a>
+<a name="781">
+In the IEEE single format, the difference in magnitude between the two
+smallest positive subnormal numbers is approximately 10<sup>-45</sup>,
+whereas the difference in magnitude between the two largest finite numbers
+is approximately 10<sup>31</sup>! <p>
+</a>
+<a name="782">
+In <a href="ncg_math.doc.html#782">Table&#160;2-13</a>,
+<kbd>nextafter(x,+</kbd><img src="ncg_lib.doc.anc.gif"><kbd>)</kbd>
+denotes the next representable number after <kbd>x</kbd> as you move
+along the number line towards <kbd>+</kbd><img
+src="ncg_lib.doc.anc.gif"><kbd>. </kbd><br><br><Table Border="1"
+Cellpadding="5">
+<caption><a name="614">
+<p><center><h4><font size=3>Table &#160;2-13     Gaps Between
+Representable Single-Format <br>
+Floating-Point Numbers&#160;
+</font></h4></center>
+</a></caption>
+
+<tr align="left" valign="baseline"><td><a name="617">
+<b>x </b><br>
+</a>
+<td><a name="609">
+<b>nextafter(x, +<img src="ncg_lib.doc.anc.gif">) </b><br>
+</a>
+<td><a name="615">
+<b>Gap </b><br>
+</a>
+
+<tr valign="baseline"><td><a name="620">
+<p>0.0
+</a>
+<td><a name="616">
+<p>1.4012985e-45
+</a>
+<td><a name="618">
+<p>1.4012985e-45
+</a>
+
+<tr valign="baseline"><td><a name="623">
+<p>1.1754944e-38
+</a>
+<td><a name="619">
+<p>1.1754945e-38
+</a>
+<td><a name="621">
+<p>1.4012985e-45
+</a>
+
+<tr valign="baseline"><td><a name="626">
+<p>1.0
+</a>
+<td><a name="622">
+<p>1.0000001
+</a>
+<td><a name="624">
+<p>1.1920929e-07
+</a>
+
+<tr valign="baseline"><td><a name="629">
+<p>2.0
+</a>
+<td><a name="625">
+<p>2.0000002
+</a>
+<td><a name="627">
+<p>2.3841858e-07
+</a>
+
+<tr valign="baseline"><td><a name="632">
+<p>16.000000
+</a>
+<td><a name="628">
+<p>16.000002
+</a>
+<td><a name="630">
+<p>1.9073486e-06
+</a>
+
+<tr valign="baseline"><td><a name="635">
+<p>128.00000
+</a>
+<td><a name="631">
+<p>128.00002
+</a>
+<td><a name="633">
+<p>1.5258789e-05
+</a>
+
+<tr valign="baseline"><td><a name="638">
+<p>1.0000000e+20
+</a>
+<td><a name="634">
+<p>1.0000001e+20
+</a>
+<td><a name="636">
+<p>8.7960930e+12
+</a>
+
+<tr valign="baseline"><td><a name="640">
+<p>9.9999997e+37
+</a>
+<td><a name="637">
+<p>1.0000001e+38
+</a>
+<td><a name="639">
+<p>1.0141205e+31
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="784">
+Any conventional set of representable floating-point numbers has the
+property that the worst effect of one inexact result is to introduce an
+error no worse than the distance to one of the representable neighbors
+of the computed result. When subnormal numbers are added to the
+representable set and gradual underflow is implemented, the worst
+effect of one inexact or <em>underflow</em>ed result is to introduce an
+error no greater than the distance to one of the representable
+neighbors of the computed result. <p>
+</a>
+<a name="785">
+In particular, in the region between zero and the smallest
+<em>normal</em> number, the distance between any two neighboring
+numbers equals the distance between zero and the smallest
+<em>subnormal</em> number. The presence of subnormal numbers eliminates
+the possibility of introducing a roundoff error that is greater than
+the distance to the nearest representable number. <p>
+</a>
+<a name="786">
+Because no calculation incurs roundoff error greater than the distance
+to any of the representable neighbors of the computed result, many
+important properties of a robust arithmetic environment hold, including
+these three: <p>
+</a>
+<ul><a name="375">
+<li><em>x</em> <img src="chars/notequal.gif"> <em>y</em> <img
+src="chars/arrwdbbo.gif"> <em>x</em> <code>-</code> <em>y</em> <img
+src="chars/notequal.gif"> 0
+</a>
+<a name="379">
+<li><kbd>(</kbd>x<kbd>-</kbd>y<kbd>)</kbd> <kbd>+</kbd> <em>y</em> <img
+src="chars/approx.gif"> <em>x</em><kbd>,</kbd> to within a rounding
+error in the larger of <em>x</em> and <em>y</em>
+</a>
+<a name="380">
+<li><kbd>1/(1/</kbd>x<kbd>)</kbd> <img src="chars/approx.gif">
+<em>x</em>, when <em>x</em> is a normalized number, implying
+<kbd>1/</kbd>x <img src="chars/notequal.gif"> <kbd>0</kbd>
+</a>
+</ul><a name="697">
+An alternative underflow scheme is <kbd>Store</kbd> <kbd>0</kbd>, which
+flushes underflow results to zero. <kbd>Store</kbd> <kbd>0</kbd>
+violates the first and second properties whenever <kbd>x-y</kbd>
+underflows. Also, <kbd>Store</kbd> <kbd>0</kbd> violates the third
+property whenever <kbd>1/x</kbd> underflows. <p>
+</a>
+<a name="792">
+Let <img src="chars/lambda.gif"> represent the smallest positive
+normalized number, which is also known as the underflow threshold. Then
+the error properties of gradual underflow and <kbd>Store</kbd>
+<kbd>0</kbd> can be compared in terms of <img src="chars/lambda.gif">.
+<p>
+</a>
+<a name="641">
+<pre>   gradual underflow: |error| &lt; 1/2 ulp in <img
+src="chars/lambda.gif">
+</pre>
+</a>
+<a name="642">
+<pre>   Store 0:           |error| <img src="chars/approx.gif"> <img
+src="chars/lambda.gif">
+</pre>
+</a>
+<a name="793">
+There is a significant difference between 1/2 unit in the last place of
+<img src="chars/lambda.gif">, and <img src="chars/lambda.gif">
+itself.<p>
+</a>
+<a name="795">
+<h3><font size=5><i></i> Two Examples of Gradual Underflow Versus
+<kbd>Store</kbd> 0
+</font></h3>
+</a>
+<a name="503">
+The following are two well-known mathematical examples. The first
+example is an inner product. <br><br><Table Border="1" Cellpadding="5">
+<caption></caption>
+
+<tr valign="baseline"><td><a name="505">
+<pre>sum = 0;
+for (i = 0; i &lt; n; i++) {
+   sum = sum + a[i] * y[i];
+}
+result = sum / n; </pre>
+</a>
+
+
+</Table>
+
+<Table>
+<tr><td>
+</Table><p>
+<p>
+</a>
+<a name="797">
+With gradual underflow, <kbd>result</kbd> is as accurate as roundoff
+allows. In <kbd>Store 0</kbd>, a small but nonzero sum could be
+delivered that looks plausible but is wrong in nearly every digit.
+However, in fairness, it must be admitted that to avoid just these
+sorts of problems, clever programmers scale their calculations if they
+are able to anticipate where minuteness might degrade accuracy. <p>
+</a>
+<a name="457">
+The second example, deriving a complex quotient, isn&#39;t amenable to
+scaling:<p>
+</a>
+<a name="495">
+				<p><img src="ncg_math.doc.anc25.gif">
+</a>
+<a name="486">
+<p>
+</a>
+<a name="800">
+It can be shown that, despite roundoff, the computed complex result
+differs from the exact result by no more than what would have been the
+exact result if  <em>p</em> + <em>i</em> &#183; <em>q</em> and
+<em>r</em> + <em>i</em> &#183; <em>s</em> each had been perturbed by no
+more than a few <em>ulps</em>. This error analysis holds in the face of
+underflows, except that when both <em>a</em> and <em>b</em> underflow,
+the error is bounded by a few <em>ulps</em> of |<em>a</em> + <em>i</em>
+&#183; <em>b</em>|. Neither conclusion is true when underflows are
+flushed to zero. <p>
+</a>
+<a name="801">
+This algorithm for computing a complex quotient is robust, and amenable
+to error analysis, in the presence of gradual underflow. A similarly
+robust, easily analyzed, and efficient algorithm for computing the
+complex quotient in the face of <kbd>Store</kbd> <kbd>0</kbd> <em>does
+not exist</em>. In <kbd>Store</kbd> <kbd>0</kbd>, the burden of
+worrying about low-level, complicated details shifts from the
+implementor of the floating-point environment to its users. <p>
+</a>
+<a name="802">
+The class of problems that succeed in the presence of gradual
+underflow, but fail with <kbd>Store</kbd> <kbd>0</kbd>, is larger than
+the fans of <kbd>Store</kbd> <kbd>0</kbd> may realize. Many frequently
+used numerical techniques fall in this class: <p>
+</a>
+<ul><a name="803">
+<p><li>Linear equation solving
+</a>
+<a name="804">
+<p><li>Polynomial equation solving
+</a>
+<a name="805">
+<p><li>Numerical integration
+</a>
+<a name="806">
+<p><li>Convergence acceleration
+</a>
+<a name="807">
+<p><li>Complex division
+</a>
+</ul><a name="808">
+<h3><font size=5><i></i> Does Underflow Matter?
+</font></h3>
+</a>
+<a name="809">
+Despite these examples, it can be argued that underflow rarely matters,
+and so, why bother? However, this argument turns upon itself.<p>
+</a>
+<a name="810">
+In the absence of gradual underflow, user programs need to be sensitive
+to the implicit inaccuracy threshold. For example, in single precision,
+if underflow occurs in some parts of a calculation, and
+<kbd>Store</kbd> <kbd>0</kbd> is used to replace underflowed results
+with <kbd>0</kbd>, then accuracy can be guaranteed only to around
+10<sup>-31</sup>, not 10<sup>-38</sup>, the usual lower range for
+single-precision exponents.
+<p>
+</a>
+<a name="647">
+This means that programmers need to implement their own method of
+detecting when they are approaching this inaccuracy threshold, or else
+abandon the quest for a robust, stable implementation of their
+algorithm. <p>
+</a>
+<a name="648">
+Some algorithms can be scaled so that computations don&#39;t take place
+in the constricted area near zero. However, scaling the algorithm and
+detecting the inaccuracy threshold can be difficult and time-consuming
+for each numerical program.<p>
+</a>
+<a name="818">
+<p>
+</a>
+
+<br>
+
+<center>
+<a href="ncg_intro.doc.html">
+<img src="shared/previous_motif.gif" alt="Previous"></a>
+
+<a href="ncg_lib.doc.html">
+<img src="shared/next_motif.gif" alt="Next"></a>
+<a href="index.html">
+<img src="shared/contents_motif.gif" alt="Contents"></a>
+<a href="IX.html">
+<img src="shared/index.gif" alt="Index"></a>
+<a href="../index.html">
+<img src="shared/up_motif.gif" alt="Doc Set"></a>
+<a href="../../index.html">
+<img src="shared/home.gif" alt="Home"></a>
+</center>
+<hr noshade> <br>
+
+

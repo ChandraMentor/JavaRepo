@@ -1,0 +1,389 @@
+<HTML>
+<HEAD>
+<TITLE>Programming and Software Engineering</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H1 ALIGN=center><CENTER><FONT COLOR="#800000"><A NAME="Number">Binary Number Systems</A></FONT></CENTER></H1>
+<P>
+[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+<HR>
+
+<LI>Computers store numbers in some approximate form that can
+be packed into a fixed number of bits.<P>
+<TABLE COLUMNS=2>
+
+<TR><TD VALIGN=TOP>&nbsp</TD>
+<TD VALIGN=TOP width=50% BGCOLOR=#COCOCO>
+<FONT FACE="Helvetica, Ariel" SIZE=2>
+<UL>
+<LI><A HREF="../Softeng/se1.html#Decimal">Decimal System</A>
+<LI><A HREF="../Softeng/se1.html#Point">Fixed-Point, 
+Floating Point and Normalised Floating-Point Representation</A>
+<LI><A HREF="../Softeng/se1.html#System">Binary System</A>
+<LI><A HREF="../Softeng/se1.html#whole">Decimal to Binary Conversion of whole numbers</A>
+
+</UL></FONT></TD>
+<TD VALIGN=TOP width=50% BGCOLOR=#COCOCO>
+<FONT FACE="Helvetica,   Ariel" SIZE=2>
+<UL>
+<LI><A HREF="../Softeng/se1.html#Conversion">Decimal to Binary  Conversion of Decimal Numbers</A>
+<LI><A HREF="../Softeng/se1.html#Binary to Decimal">Conversion from Binary to Decimal</A>
+<LI><A HREF="../Softeng/se1.html#Storage">Fixed Point Storage of Binary Numbers</A>
+<LI><A HREF="../Softeng/se1.html#Floating">Floating Point Representation of Binary Numbers</A>
+<LI><A HREF="../Softeng/se1.html#0.2">Binary Representation of 0.2</A>	
+</UL>
+</FONT>
+</TD></TR></TABLE>
+<P><HR><P>
+<B><FONT COLOR=#800000><A NAME="Decimal">
+<U><H2 ALIGN=center>Decimal System</H2></U></A>
+</FONT></B><P>[<A HREF="se1.html"><FONT SIZE=-1>Back to
+Contents</FONT></A>]<P>
+<LI>Counts in 10's using the marks 0-9 to represent values.<P>
+<PRE>32 = 3x10<SUP>1</SUP> +2x10<SUP>0</SUP>
+<P>
+4281 = 4x10<SUP>3</SUP> + 2x10<SUP>2</SUP> + 8x10<SUP>1</SUP>+ 1x10<SUP>0
+</SUP></PRE><P>
+<LI>Each digit in the number has positional value and represents
+the number of occurrences of the weight of that position.<P>
+<LI>Non-integral numbers (real numbers)<P>
+<PRE>4281.82=4x10<SUP>3</SUP>+2x10<SUP>2</SUP>+8x10<SUP>1</SUP>      +1x10<SUP>0</SUP> + 8x10<SUP>-1</SUP>+2x10<SUP>-2<P>
+</SUP></PRE><P>
+Here, the decimal 'weights' are:<P> 
+<PRE>10<SUP>3</SUP>, 10<SUP>2</SUP>,
+10<SUP>1</SUP>, 10<SUP>0</SUP>, 10<SUP>-1</SUP>, 10<SUP>-2</SUP></PRE>
+<P>
+<CENTER><B><FONT COLOR="#800000"><A NAME="Point">Fixed-Point, Floating-Point and<BR>
+Normalised Floating-Point Representation</A></FONT></B></CENTER><P>
+<LI>Consider the numbers<P>
+<PRE>                         
+                          8340000.00
+                          0.00000834       Fixed-Point
+                          22.18            Representation
+                          3.1415926     
+</PRE>
+<P>
+<LI>Floating-Point representation<P>
+<PRE>                         
+                                      834.00x10<SUP>4<P></SUP>
+                                      0.834x10<SUP>-5</SUP>   
+                                      22.18x10<SUP>0</SUP>                                      
+                                      3.1415926x10<SUP>0</SUP>
+</PRE>
+<P>
+<LI>Normalized floating-point representation<P>
+<PRE>
+                     0.834x10<SUP>6</SUP>    Standarisation
+                     0.834x10<SUP>-5</SUP>   of the position
+                    0.2218x10<SUP>2</SUP>    of the
+                0.31415962x10<SUP>1</SUP>    decimal point
+</PRE><P>
+<LI>In general a decimal number can be written in the form<P>
+<PRE>
+decimal number = M x 10<SUP>E</SUP>, where<P>
+M - Mantissa      E - Exponent
+</PRE><P>[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+
+<HR><P>
+<CENTER>
+<FONT COLOR=#800000><A NAME="System"><U>
+<H2 ALIGN=center>Binary System</H2></U></A><P></FONT></CENTER>
+<P>[<A HREF="se1.html"><FONT SIZE=-1>Back to Contents</FONT></A>]<P>
+<LI>Counts in 2's using the marks 0 and 1 to represent a number.
+<P>
+<PRE>
+Binary Weights: 2<SUP>5</SUP> 2<SUP>4</SUP> 2<SUP>3</SUP> 2<SUP>2</SUP> 2<SUP>1</SUP> 2<SUP>0</SUP> 2<SUP>-1</SUP> 2<SUP>-2</SUP> 2<SUP>-3</SUP>
+<P>
+Decimal Equivalent: 32  16  8  4  2  1  0.5 0.25  0.125 
+<P>
+32=1x2<SUP>5</SUP> + 0x2<SUP>4</SUP> + 0x2<SUP>3</SUP>+ 0x2<SUP>2</SUP>+ 0x2<SUP>1</SUP> + 0x2<SUP>0</SUP> <P>
+    100000
+<P>
+41 = 1x2<SUP>5</SUP> + 0x2<SUP>4</SUP> + 1x2<SUP>3</SUP> + 0x2<SUP>2</SUP>+ 0x2<SUP>1</SUP> + 1x2<SUP>0</SUP> <P>
+    101001<P>
+<P>
+</PRE><P>
+<LI>Binary encoding of decimal digits:<P>
+<TABLE WIDTH=90% ALIGN=middle>
+<TR><TD></TD><TD></TD><TD><FONT COLOR=#800000>Decimal</FONT></TD>
+<TD><FONT COLOR=#800000>Binary</FONT></TD></TR>
+<TR><TD></TD><TD></TD><TD>0</TD><TD>0000</TD></TR>
+<TR><TD></TD><TD></TD><TD>1</TD><TD>0001</TD></TR>
+<TR><TD></TD><TD></TD><TD>2</TD><TD>0010</TD></TR>
+<TR><TD></TD><TD></TD><TD>3</TD><TD>0011</TD></TR>
+<TR><TD></TD><TD></TD><TD>4</TD><TD>0100</TD></TR>
+<TR><TD></TD><TD></TD><TD>5</TD><TD>0101</TD></TR>
+<TR><TD></TD><TD></TD><TD>6</TD><TD>0110</TD></TR>
+<TR><TD></TD><TD></TD><TD>7</TD><TD>0111</TD></TR>
+<TR><TD></TD><TD></TD><TD>8</TD><TD>1000</TD></TR>
+<TR><TD></TD><TD></TD><TD>9</TD><TD>1001</TD></TR>
+</TABLE>
+<P>
+<TABLE WIDTH=90% ALIGN=middle>
+<TR><TD><FONT COLOR=#800000>Decimal numbers</FONT></TD><TD><FONT COLOR=#800000>Binary numbers</FONT>
+</TD></TR>
+<TR><TD>5.0</TD><TD>101.0</TD></TR>
+<TR><TD>5.5</TD><TD>101.1</TD></TR>
+<TR><TD>6.25</TD><TD>110.01</TD></TR>
+<TR><TD>8.75</TD><TD>1000.111</TD></TR>
+<TR><TD></TD><TD></TD></TR>
+<TR><TD><FONT COLOR=#800000>. is a Decimal Point</FONT></TD><TD><FONT COLOR=#800000>. is a Binary Point</FONT>
+</TD></TR>
+</TABLE>
+<LI>Binary Coded Decimal (BCD) :<P>
+Used to represent decimal digits directly.<P>
+<PRE>
+Decimal      19.25
+Binary     10011.01
+BCD     0001 1001 . 0010 0101
+        1    9    .   2    5
+</PRE>
+<P>
+<LI>Binary Arithmetic<P>
+<PRE>                         
+                             Addition             Multiplication
+                             <P>
+                             0 + 0 = 0            0 x 0 = 0
+                             0 + 1 = 1            0 x 1 = 0
+                             1 + 0 = 1            1 x 0 = 0
+                             1 + 1 = 10           1 x 1 = 1
+</PRE>
+<P>
+<LI>Examples:<P>
+<PRE>  
+                     Decimal                  Binary 
+<HR noshade>
+
+                                 12                               1100 
+                               +  5                             +  101 
+<HR noshade>
+                                 17                              10001
+<HR noshade>
+                                 11                              01011
+                               +  6                           +  00110 
+<HR noshade>
+                                 17                              10001 
+<HR noshade>
+
+</PRE><P>
+<LI>Binary numbers (arithmetic) are the basis of 'flip-flop' circuits
+0 -- current off, 1 -- current on<P>
+[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+<P>
+<HR>
+<P>
+<FONT COLOR=#800000><A NAME="whole"><U><H2 ALIGN=center>Decimal to Binary
+Conversion of whole
+ numbers</H2></U></A></FONT><P>
+[<A HREF="se1.html"><FONT SIZE=-1>Back to Contents</FONT></A>]<P>
+<LI>For whole numbers, divide by 2 and write result beneath with
+remainder to the side (1 or 0) and repeat process until fraction
+obtained.<P>
+Example: Convert 41 to binary form.<P>
+<PRE>
+41/2                      1
+20/2                      0
+10/2                      0                   41<SUB>10</SUB><IMG SRC="Imgbelos.gif">101001<SUB>2</SUB>
+5/2                       1
+2/2                       0
+1/2                       1
+</PRE><P>
+<LI>Example: Convert 63 to binary form.
+<P><PRE>
+63/2                      1
+31/2                      1
+15/2                      1                   63<SUB>10</SUB><IMG SRC="Imgbelos.gif">111111<SUB>2</SUB>
+7/2                       1
+3/2                       1
+1/2                       1
+</PRE><P>[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+<P>
+<HR><P>
+<FONT COLOR=#800000><A NAME="Conversion">
+<U><H2 ALIGN=center>Decimal to Binary Conversion of Decimal
+Numbers</H2></U></A></FONT>
+<P>
+<LI>Multiply by 2 and right result beneath. Remove digit before
+the point to form the binary fraction. Repeat process until zero
+fraction value occurs, or the required accuracy is reached.<P>
+Example: Convert 0.625 to binary form.<P>
+<PRE>
+0.625x2
+1.25                      1
+.25x2
+0.5                       0                   0.625<SUB>10</SUB><IMG SRC="Imgbelos.gif">.101<SUB>2</SUB>
+.5x2                      
+1.0                       1
+.0x2
+</PRE>
+<LI>Example: Convert 27.375 to binary form<P>
+Step 1 - convert whole number part<P>
+<PRE>
+27/2                      1
+13/2                      1
+6/2                       0                   27<SUB>10</SUB><IMG SRC="Imgbelos.gif">11011<SUB>2</SUB>
+3/2                       1
+1/2                       1
+</PRE><P>
+Step 2 - convert decimal part<P>
+<PRE>
+0.375x2
+0.75                      0
+.25x2
+1.5                       1                   .375<SUB>10</SUB><IMG SRC="Imgbelos.gif">.011<SUB>2</SUB>
+.5x2
+1.0                       1
+.0x2
+</PRE>
+<P>
+<LI>Combining the results: 27.375<SUB>10</SUB><IMG
+SRC="Imgbelos.gif">11011.011<SUB>2</SUB>
+<P>[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+<P>
+<HR><P>
+<FONT COLOR=#800000><A NAME="Binary to Decimal">
+<U><H2 ALIGN=center>Conversion form Binary to Decimal</H2></U></A></FONT>
+<P>
+Example: Convert 11.101 to a decimal value
+<P>
+<TABLE WIDTH=90% ALIGN=middle>
+<TR><TD>2<SUP>1</SUP></TD><TD>2<SUP>0</SUP></TD><TD>.</TD><TD>2<SUP>-1</SUP>
+</TD><TD>2<SUP>-2</SUP></TD><TD>2<SUP>-3</SUP></TD></TR>
+<TR><TD>2</TD><TD>1</TD><TD></TD><TD>0.5</TD><TD>0.25</TD><TD>0.125
+</TD></TR>
+<TR><TD>1</TD><TD>1</TD><TD>.</TD><TD>1</TD><TD>0</TD><TD>1</TD>
+</TR>
+</TABLE>
+<P>
+Conversion:
+<P>
+11.101<SUB>2</SUB>=1x2+1x1+1x0.5+0x0.25 +1x0.125 = 3.625<SUB>10</SUB><P>
+[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+<P>
+<HR><P>
+<FONT COLOR=#800000><A NAME="Storage">
+<U><H2 ALIGN=center>Fixed Point Storage of Binary Numbers</H2></U></A></FONT>
+<P>
+<LI>Consider a 16 bit word (for demonstration purposes only) where
+the binary point is taken to occur between the 8<SUP>th</SUP>
+and 9<SUP>th</SUP> entries. Thus,<P>
+<TABLE WIDTH=90% ALIGN=middle>
+<TR><TD><FONT COLOR=#800000>Decimal</FONT></TD><TD><FONT COLOR=#800000>Binary</FONT>
+</TD><TD><FONT COLOR=#800000>Fixed Point Storage</FONT></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>5.0</TD><TD>101.0</TD><TD>0000010100000000</TD></TR>
+<TR><TD>5.5</TD><TD>101.1</TD><TD>0000010110000000</TD></TR>
+<TR><TD>5.75</TD><TD>101.11</TD><TD>0000010111000000</TD></TR>
+<TR><TD>5.875</TD><TD>101.111</TD><TD>0000010111100000</TD></TR>
+</TABLE>
+<P>
+<LI>A problem occurs if number becomes so large that the number
+of bits required to represent it using fixed point storage exceeds
+the word length.<P>
+Example:<P>
+<TABLE WIDTH=90% ALIGN=middle>
+<TR><TD>500.875</TD><TD>111110100.111</TD><TD>11111010011100000
+</TD></TR>
+</TABLE>
+<P ALIGN=RIGHT>1 on LHS of number above gives 'Overflow'</P>
+<P>
+<LI>If the number of bits required exceeds the word length, the
+result is called 'overflow'.<P>
+<LI>Word length sets a limit on the magnitude of the number that
+can be stored.<P>
+[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+<HR><P>
+<U><H2 ALIGN=center><FONT COLOR="#800000"><A NAME="Floating">Floating Point Representation<BR>
+of Binary Numbers</A>
+</FONT></H2></U><P>
+<LI>Use Mantissa/Exponent to represent number.<P>
+<TABLE WIDTH=90% ALIGN=middle>
+<TR><TD><FONT COLOR=#800000>Decimal</FONT></TD><TD><FONT COLOR=#800000>Binary</FONT>
+</TD><TD><FONT COLOR=#800000>Normalised Floating Point Binary</FONT>
+</TD></TR>
+<TR><TD>0.5</TD><TD>0.1</TD><TD>0.1x10<SUP>0</SUP></TD></TR>
+<TR><TD>1.5</TD><TD>1.1</TD><TD>0.11x10<SUP>1</SUP></TD></TR>
+<TR><TD>2.5</TD><TD>10.1</TD><TD>0.101x10<SUP>10</SUP></TD></TR>
+<TR><TD>33.25</TD><TD>100001.01</TD><TD>0.10000101x10<SUP>110</SUP>
+</TD></TR>
+<TR><TD>500.875</TD><TD>111110100.111</TD><TD>0.111110100111x10<SUP>1001</SUP>
+</TD></TR>
+</TABLE>
+<P>
+<LI>In a 16 bit word, normalised floating point representation
+is:<P><PRE>
+             Mantissa                     Exponent
+1  2  3  4  5  6  7  8  9  10  11  12  |  13  14  15  16     16 bit
+1  0  0  0  0  0  0  0  0  0   0   0   |  0   0   0   0      word
+1  1  0  0  0  0  0  0  0  0   0   0   |  0   0   0   1
+1  0  1  0  0  0  0  0  0  0   0   0   |  0   0   1   0
+1  0  0  0  0  1  0  1  0  0   0   0   |  0   1   1   0
+1  1  1  1  1  0  1  0  0  1   1   1   |  1   0   0   1
+<P>
+N.B First column is always 1                  No overflow
+    can be ignored providing                  in this case
+    further storage space                     for decimal no.
+                                              500.875
+</PRE>
+<P>
+<LI>This is the principal upon which number storage is based with
+VAX --II systems.<P>
+<LI>VAX uses 32 - bit words instead of 16 - bit.<P>
+<LI>Integer decimal numbers have an exact representation in a
+binary number system.<P>
+Integer arithmetic is exact.<P>
+<LI>Most real decimal numbers can not be represented exactly using
+a binary number system.<P>
+Real arithmetic is not exact -- an important aspect of numerical
+computing.<P>
+<LI>Examples of exact binary representation:<P>
+<P>
+<IMG SRC="IMGse2.GIF">
+<P>
+Binary representation is 0.1.
+<P>
+<IMG SRC="IMGse1.GIF">
+<P>
+Binary representation is 0.01
+<P>
+<LI>Example of approximate binary representation:<P>
+0.2      Decimal<P>
+0.0010011001...      Binary<P>
+[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+<P><HR><P>
+<FONT COLOR=#800000><A NAME="0.2">
+<H2 ALIGN=center><U>Binary representation of 0.2</U></H2></A><P></FONT>
+<P><P><TABLE
+WIDTH=90% ALIGN=middle>
+<TR><TD><B>Binary Weight</B></TD><TD><B>Decimal Value</B></TD>
+<TD><B>Appropriate bit</B></TD></TR>
+<TR><TD>2<SUP>-1</SUP></TD><TD>0.5</TD><TD>0</TD></TR>
+<TR><TD>2<SUP>-2</SUP></TD><TD>0.25</TD><TD>0</TD></TR>
+<TR><TD>2<SUP>-3</SUP></TD><TD>0.175</TD><TD>1</TD></TR>
+<TR><TD>2<SUP>-4</SUP></TD><TD>0.0625</TD><TD>0</TD></TR>
+<TR><TD>2<SUP>-5</SUP></TD><TD>0.03125</TD><TD>0</TD></TR>
+<TR><TD>2<SUP>-6</SUP></TD><TD>0.015625</TD><TD>1</TD></TR>
+<TR><TD>2<SUP>-7</SUP></TD><TD>0.0078125</TD><TD>1</TD></TR>
+<TR><TD>2<SUP>-8</SUP></TD><TD>0.0390625</TD><TD>0</TD></TR>
+<TR><TD>2<SUP>-9</SUP></TD><TD>0.001953125</TD><TD>0</TD></TR>
+<TR><TD>2<SUP>-10</SUP></TD><TD>0.0009765625</TD><TD>1</TD></TR>
+<TR><TD>2<SUP>-11</SUP></TD><TD>0.00048828125</TD><TD>1</TD></TR>
+</TABLE>
+<P>
+<CENTER><IMG SRC="Imgse3.gif"></CENTER>
+<P>
+Approximate binary representation of 0.2 is :     0.00100110011
+<HR>
+[<FONT SIZE=-1><A HREF="se1.html">Software Engineering Resource</A></FONT>] | 
+[<A HREF="../Module/Modse.html#1"><FONT SIZE=-1>Software Engineering Units</FONT></A>] | 
+<P><P>
+</BODY>
+</HTML>

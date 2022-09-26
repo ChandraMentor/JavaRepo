@@ -1,0 +1,29 @@
+Package is a very convienent feature in Java that can be used to group related classes and interfaces together.
+
+1)A package can be stored in a file system  or in a database.
+
+2) Java classes that are defined without a package name will be stored in unnamed package.
+
+3) The host system should provide atleast one unnamed package.
+
+4) Most of the Systems associate one unnamed package for each of the directory that is searched by Java or only one unnamed package.
+
+5)A package can have members of either or both of the following 
+     a) Subpackages of the package 
+     b) Types
+
+6) Fully Qualified Names
+
+Every package,class,interface and primitive type has a fully qualified name. 
+
+a)The fully qualified name of a primitive type is the keyword for that primitive type.
+
+b)The fully qualified name of a named package that is not a subpackage of a named package is its simple name.
+
+c)The fully qualified name of a named package that is a subpackage of another named package consists of the fully qualified name of the containing package, followed by ".", followed by the simple (member) name of the subpackage. 
+
+d)The fully qualified name of a class or interface that is declared in an unnamed package is the simple name of the class or interface. 
+
+e)The fully qualified name of a class or interface that is declared in a named package consists of the fully qualified name of the package,
+followed by ".", followed by the simple name of the class or interface. 
+

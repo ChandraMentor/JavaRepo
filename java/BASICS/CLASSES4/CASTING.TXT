@@ -1,0 +1,31 @@
+Rules for Casting from one object type to another type
+
+1) Any object can be cast from one type to another type provided that they are
+   in the same branch of inheritance tree ( on the same Inheritance Chain).
+
+2) Casting allows to use one type of object as other type of object.
+
+3) Explicit cast is not required to cast from sub class object to super class object.
+
+	superclassobjectref  = subclassobjectref (Known as widening reference conversion)
+
+4) A super class reference can refer to sub class object.
+
+5) A sub class reference cannot refer to super class object.
+
+6) A sub class reference can refer to super class reference by using Explicit cast
+   operator, but the super class reference should be refering the obecjt of sub class
+   type or it's sub class.
+
+	subclassobjectref = (subclassobjectref) superclassobjectref  
+		(Known as narrowing reference conversion)
+
+7) widening reference conversions never require a special action at run time and therefore    never throw an exception at run time.
+
+8) It is a good practice to check whether an object is an instanceof particular
+   class type before applying narrowing reference conversion.
+
+Variable hiding:
+
+	When a method is invoked on an object , the actual class of the object governs the
+method to be used. When a field is accessed, the declared type of the reference is used.

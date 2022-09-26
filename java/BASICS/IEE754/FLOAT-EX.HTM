@@ -1,0 +1,62 @@
+Examples for floating point representations.
+
+
+Represent -2.625 in float (S)
+
+Convert to base-2:
+  -10.101
+Put in floating point so that the integer part is 0 and
+the first digit of the fractional part is 1:
+  -0.10101 * 2^2
+Determine sign field (0 for +, 1 for -):
+  1
+Determine exponent field (excess-128):
+  2 + 128 = 130_base10 = 10000010_base2
+Determine mantissa field (copy fract. part and pad with zeroes):
+  10101000000000000000000
+Result:
+  11000001010101000000000000000000
+Result in hexadecimal:
+  C1540000
+
+
+Represent -2.625 in IEEE 754 float
+ 
+Convert to base-2:
+  -10.101
+Put in floating point so that the integer part is 1:
+  -1.0101 * 2^1
+Determine sign field (0 for +, 1 for -):
+  1
+Determine exponent field (excess-127):
+  1 + 127 = 128_base10 = 10000000_base2
+Determine mantissa field (copy fract. part and pad with zeroes):
+  01010000000000000000000
+Result:
+  11000000001010000000000000000000
+Result in hexadecimal:
+  C0280000
+
+
+Represent -2.625 in IEEE 754 double
+
+Convert to base-2:
+  -10.101
+Put in floating point so that the integer part is 1:
+  -1.0101 * 2^1
+Determine sign field (0 for +, 1 for -):
+  1
+Determine exponent field (excess-1023):
+  1 + 1023 = 1024_base10 = 10000000000_base2
+Determine mantissa field (copy fract. part and pad with zeroes):
+  01010000000000000000000
+Result:
+  11000000000001010000000000000000
+  00000000000000000000000000000000
+Result in hexadecimal:
+  C005000000000000
+
+
+More examples:
+Patterson and Hennessy, p. 279
+Silvester and Lowther, p. 41, 42

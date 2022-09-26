@@ -1,0 +1,22 @@
+Abstract class
+
+It is a combination of abstract methods and concrete methods.
+
+1) An abstract class can contain any no of instance variables and methods.
+
+2) An abstract class can contain a method with/without  method body.
+
+3) A method without method body is also known as abstract method. A method with method body is known as concerete method. The same methods in c++ is called as pure virtual functions.
+
+4) An abstract class can have 0 or any no of  abstact  method.
+
+5) Java complier ensures that all the methods that are declared as abstracted are implemented in the concrete subclass of the abstract class.
+
+6) A reference to abstract class type can be created and it can  be used to refer to any class in the inheritance chain as a normal class.
+
+7) An abstract methods (methods without implementation)   can be  declared only in abstract classes.
+
+Final class:
+A class can be declared final so that no one can create a sub class of the class.
+
+8) Since a sub class cannot be created for final classes an abstract class cannot be     declared as final class.

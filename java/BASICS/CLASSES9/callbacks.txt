@@ -1,0 +1,1 @@
+Example to show a call back can be implemented using interfaces

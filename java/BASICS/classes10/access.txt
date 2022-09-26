@@ -1,0 +1,45 @@
+Access specifiers for the members of the class
+
+1) For a same class private access is allowed for
+   the variables and functions.
+
+2) For a same class if no modifier is given(package access)then all the variables and functions can be accessed within the same class.
+
+3) For a same class if the access specifier is protected then also all the variables and functions can be accessed within the same class.
+
+4) For a same class if the access specifier is public then also all the variables and functions can be accessed.
+
+5) If a same package sub class then the private members cannot accessed.
+
+6) If a same package sub class having no modifier then it can be accessed.
+
+7) If a same package sub class having protected then it can be accessed.
+
+8) If a same package sub class having public then it can be accessed.
+
+9)If different package sub class having private modifier then it cannot be accessed.
+
+10)If different package sub class having no modifier then it cannot be accessed.
+
+11) if different package sub class having protected modifier can be accessed.
+
+12) if different package sub class having public modifier then it can be accessed.
+
+13) If  different package non subclass having private then it cannot be accessed.
+
+14) If different package non subclass having no modifier then it cannot be accesed.
+
+15) if different package non subclass having protected modifier then it cannot be accessed.
+
+16) if different package non sub class having public modifier then it can be accessed.
+
+17) If same package non sub class having private access cannot be accessed.
+
+18) if same package non sub class having no modifier can be accessed.
+
+19) if same package non sub class having protected access specifier cannot be accessed.
+
+20) if same package non sub class having public access can be accessed.
+
+
+

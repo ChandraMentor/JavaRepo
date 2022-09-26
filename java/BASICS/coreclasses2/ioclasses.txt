@@ -1,0 +1,11 @@
+IO Classes
+
+1) Java i/o is defined in terms of streams ( Stream is a sequence of
+   data)
+
+2) Java i/o classes are divided in to two types byte streams and character
+   streams.
+
+3) Byte Streams are also called as input/output streams.
+
+4) Character Streams are called as Readers and writers.

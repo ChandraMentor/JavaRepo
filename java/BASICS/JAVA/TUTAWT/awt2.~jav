@@ -1,0 +1,37 @@
+/* Program to show a simple window on the screen
+Author : Team -J
+Version : 1.0 */
+import java.awt.*;
+
+class awt2 extends Frame{
+	 int curx=0,cury=0;
+	 static public void main(String agrs[]){
+		awt2 sampframe = new awt2("frame window");
+		sampframe.resize(500,400);
+		sampframe.show();
+		sampframe.repaint();
+		sampframe.repaint();
+		sampframe.resize(500,300);
+		}
+	awt2(String title){
+		super(title);
+		}
+	/* Process Events */
+	public boolean handleEvent ( Event evobj ) {
+		if (evobj.id == Event.WINDOW_DESTROY)
+			System.exit(0);
+		return super.handleEvent ( evobj);
+		}
+	/* Process Key Down message*/
+	public boolean mouseDown ( Event evtobj,int x , int y){
+		curx=x;
+		cury=y;
+		repaint();
+		return true;
+		}
+	/*override the paint method of parent class*/
+	public void paint( Graphics g){
+		g.drawString(" Window sample by Team - J",10,10);
+		g.drawString(" Window sample by Team - J",30,30);
+		}
+}

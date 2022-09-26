@@ -1,0 +1,38 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+/*
+  <applet code="ColorChoice" width=200 height=60>
+  </applet>
+*/
+public class ColorChoice extends Applet 
+implements ItemListener {
+ Choice c1;
+ Canvas canvas;
+
+  public void init() {
+ c1 = new Choice();
+c1.addItem("Red");
+c1.addItem("Green");
+c1.addItem("Blue");
+
+ c1.addItemListener(this);
+add(c1);
+canvas = new Canvas();
+canvas.setBackground(Color.red);
+canvas.setSize(30, 30);
+add(canvas);
+  }
+  
+  public void itemStateChanged(ItemEvent ie) {
+ Color color;
+if(c1.getSelectedItem().equals("Red"))
+ color = Color.red;
+ else if(c1.getSelectedItem().equals("Green"))
+ color = Color.green;
+ else 
+ color = Color.blue;
+canvas.setBackground(color);
+canvas.repaint();
+  }
+}

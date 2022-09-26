@@ -1,0 +1,11 @@
+Example shows how to and why to use clone
+
+
+1) We can Provide Cloning by implementing  Cloneable and declare it's clone method
+	to throw no exception
+2) We can Provide Cloning by implementing Cloneable and  call the super.clone method
+        in the method body of clone. 
+3) We can forbid Cloning by implementing  Cloneable and declare it's clone method
+	and throw an exception in the method.
+4) We can forbid Cloning by not implementing  Cloneable and provide a clone method
+	which throws clonenotsupported exception always.

@@ -1,0 +1,33 @@
+Properties of floating point numbers
+
+1) A floating point no can take a positive infinity, positive infinity, Not a Number,
+   + zero and - zero values.
+
+2) Since 0/0 is an undefined value Java gives a result of Nan.
+
+3) If any operation on floating point no's results in a very small no which cannot
+   be represented by Float/double then Java give - inf as result.
+
+4) If any operation on floating point no's results in a very big no which cannot
+   be represented by Float/double then Java give + inf as result.
+
+5) Adding two inf's of same sign results in same sign inf.
+
+6) Adding two inf's of different signs results in NaN.
+
+7) Subtracting two inf's of same sign results in NaN.
+
+8) Subtracting two inf's of different sign results in infinity and sign will be same as
+   left operand.
+
+9) Any operation involving NaN results in NaN.
+
+10) Overflow's results to Infinity of appropriate sign.
+
+11) Underflow's results in zero.
+
+12)  Adding / subtracting to and from either of inf's results in inf.
+
+13) Multiplying inf by zero yeilds NaN.
+
+14) Multiplying inf by some no  yeilds inf.

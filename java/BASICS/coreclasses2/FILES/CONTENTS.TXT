@@ -1,0 +1,21 @@
+filein -- show how to read file using byte streams
+
+fileout  -- show how to write file using byte streams
+
+fileread  -- show how to read file using char streams
+
+filewrite  -- show how to write file using char streams
+
+readlines  -- read the file contents line by line
+
+ErrFile   -- Shows how to use filedescriptor
+
+Duplicate  -- shows how to make two fos pointing to same file
+
+TmpFiles   -- shows how to use temp files
+
+UseFile    -- shows some of the methods of File class
+
+Dir List   -- List the contents of directory
+
+

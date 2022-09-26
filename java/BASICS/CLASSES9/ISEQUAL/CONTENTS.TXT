@@ -1,0 +1,8 @@
+Examples on difference between identity and equivalance.
+
+
+ Identity is used for Reference equality. 
+
+ Equivalance is used for value equality.
+
+  

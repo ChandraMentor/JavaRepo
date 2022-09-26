@@ -1,0 +1,16 @@
+iostream1  -- demonstrates the use of ByteInputStream
+
+iostream2  -- demonstrates the use of SequenceInputStream
+
+iostream3  -- demonstrates the use of ByteArrayOutputStream
+
+iostream4  -- demonstrates the use of FilterInputStream(BufferedInputStream)
+
+iostream5  -- demonstrates the use of FilterInputStream(DataInputStream)
+
+iostream6  -- demonstrates the use of PipedInputStream/PipedInputStream
+
+iostream7  -- demonstrates the use of PrintStream( Filteroutputstream)
+
+
+

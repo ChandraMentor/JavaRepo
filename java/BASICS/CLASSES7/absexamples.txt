@@ -1,0 +1,1 @@
+Example to show that an abstract class can be derived from a concrete class.

@@ -1,0 +1,14 @@
+usestring -- this class is to demonstrate how to use string class.
+usestringbuffer -- this class is to demonstrate how to use stringbuffer
+ class.
+package1    -- demonstrates accessing different vars/methods from
+		 another class of same package
+package2    -- demonstrates accessing different vars/methods from
+ 		another class of different package
+package3    -- demonstrates accessing different vars/methods from
+		sub class of same package
+package4    -- demonstrates accessing different vars/methods from
+		sub class of  different package
+
+package5    -- demonstrates a way to access two different classes with
+		same name in different packages

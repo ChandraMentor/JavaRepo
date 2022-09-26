@@ -1,0 +1,5 @@
+array1.java  -- demonstrates how to create and use arrays of primitive data
+		type. This is giving error on nt 4.0 with sp3.
+
+array1.java  -- demonstrates how to create and use arrays of primitive data
+		type.

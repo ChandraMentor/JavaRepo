@@ -1,0 +1,17 @@
+import java.lang.*;
+
+class SwapDemo{
+public static void main(String args[]) {
+   int a,b,temp;
+   a=10;b=20;
+   System.out.println("Before Swapping");
+   System.out.println("The value of a and b are" + a + " " + b);
+
+   //swapping of two integers
+   temp=a;
+   a=b;
+   b=temp;
+   System.out.println("After Swapping");
+   System.out.println("The value of a and b are" + a + " "+ b);
+	}//end of main
+}//end of class

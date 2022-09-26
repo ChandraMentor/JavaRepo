@@ -1,0 +1,4 @@
+rajesh;hr manager;20000
+joshi;project manager;30000
+aleem;programmer;50000
+arun;teamlead;30000

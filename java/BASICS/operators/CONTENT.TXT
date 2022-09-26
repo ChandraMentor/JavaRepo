@@ -1,0 +1,9 @@
+Binpromo -- Program to show binary promotion
+floatint -- Aritmetic opeations with float and int types.
+modlusop.java -- to show that moduls operator can be used with float also.
+cond.java -- Conditional operator using floats
+bitfloat -- to show that bitwise operators cannot be used on floats
+bitls.java --	bitwise left shift operators
+bitrs.java --	bitwise right shift operators
+bitand.java --	bitwise and ,or ,exor operator on int's
+bitland.java --	bitwise and ,or ,exor operator on boolean

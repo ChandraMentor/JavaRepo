@@ -1,0 +1,21 @@
+import java.io.*;
+class iostream2  { 
+	public static void  main (String args[]) throws Exception{
+		byte c1[] = {22,23,24,25,26,27,28,29,30,31,32};
+		byte c2[] = {2,3,4,5,6,7,8,9,0,1,2};
+		ByteArrayInputStream b1= new ByteArrayInputStream(c1);
+		ByteArrayInputStream b2= new ByteArrayInputStream(c2);
+		//SequenceInputStream(InputStream,InputStream)
+		SequenceInputStream s = new SequenceInputStream(b1,b2);
+		for(int i =0; i<15;i++ ){
+			System.out.println(s.read());
+			if(i==8)
+				s.skip(5);
+			System.out.println("  ...  "+s.available());
+		}
+		// we can use all the methods that we have used in iostream1
+		// Do not use avaialable method on SequenceInputStream -- why?? may be bug
+		// skip works fine
+
+	}
+}

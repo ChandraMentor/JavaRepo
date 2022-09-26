@@ -1,0 +1,3 @@
+this is a text file
+the contents of the file will be
+redirected to the buffer.

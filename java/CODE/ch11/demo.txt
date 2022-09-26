@@ -1,0 +1,2 @@
+java is simple language.
+java is machine independent language

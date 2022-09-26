@@ -1,0 +1,30 @@
+1)Java has the following access modifiers
+
+a)private
+b)protected
+c)default
+d)public
+
+Wider access is provided as we move down from private to public access specifiers.
+
+2) Fields, methods or constructors declared private are strictly controlled,which means they provide no access outside their class.
+
+3) Fields, methods and constructors declared protected in a superclass can  be accessed by subclasses.
+
+4) Classes in the same package can also access protected fields, methods and constructors as well, even if they are not a subclass of the protected
+ member's class.
+
+5) Default access  is used when no access modifier is present. 
+Java's package structure determines accessibility when default access 
+is used. Any class, field, method or constructor that has no declared 
+access modifier is accessible only by classes in the same package.
+
+6)Public classes,fields, methods and constructors declared public 
+within a public class are visible to any class in the Java program,
+ whether these classes are in the same package or in another package. 
+
+7) Private and protected modifiers are not used for classes
+
+8) Private and protected modifiers are not used for interfaces or fields and methods within an interface.
+
+9)The default modifier is not used for fields and methods within an interface.

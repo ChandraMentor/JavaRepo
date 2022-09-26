@@ -1,0 +1,18 @@
+To Learn about fragile base class problem which is there in c++.
+
+Create sup.java with one method int m1() compile it.
+
+create sub extends sup with one method m3() compile it.
+
+creat an app using sub and run it.
+
+Now add a method to sup and compile it and run the app without
+compiling sub and app U will observer that there is no need
+to recompile the sub class but this is not the case with c++
+which using static binding.
+
+We call this problem as fragile bvase class as a change in the base class breaks the existing sub classes (i.e requires a 
+recompile / repairing).
+
+Thanks
+Team -J

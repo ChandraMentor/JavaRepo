@@ -1,0 +1,33 @@
+Interfaces
+An Interface is a collection of method definitions which provides template for the creation of a new class.
+
+1) An Interface declares one or more abstract  methods and it can        have  constants.
+
+2) All the methods should be abstract in interface.
+
+3) All methods in an interface are public.
+ 
+4) None of the methods in Interface can be  Private,          protected,static,Synchoronized,Native.
+
+5) All methods in interface are abstract whether or not marked as        abstract.
+
+6) A class can implement (not extend) any number of  interfaces
+
+7) A reference to interface can be declared by the class that has     inherited the interface.
+
+8) An object of type Interface cannot be created.
+
+9) A reference to Interface can refer to the object of class which           implements the interface.
+ 
+10) An interface can implement another interface.
+
+11) Interfaces forces the class to implement all the methods in the           classes that implement the interface.
+
+12) All the fields in Interface are implicitly public and final.
+
+13) A class that implement an Interface and does not provide an             implementation for some of the methods in Interface becomes          Abstract Class.
+
+14) A class can extend and an other class and implement an interface simultaneously, which enables the feature of multiple inheritance in java.
+
+Note:
+Java does not support multiple inheritance by extending more than one class and provides a concept of multiple inheritance by extending a class and implementing an interface.

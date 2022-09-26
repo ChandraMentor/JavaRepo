@@ -1,0 +1,3 @@
+IX,IY,Impl -- shows how to resolve ambiguous situation.
+
+SupVar,SubVar,App -- shows why javasoft has allowed the usage of same variable name in sub class. 

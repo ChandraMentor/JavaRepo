@@ -1,0 +1,12 @@
+class Bistream{
+	Void static main (String args[]){
+	Try{
+	BufferedInputStream in = new new BufferedInputStream (new 	FileInputStream("test.txt))); //create an object of fileinputstream type 
+//and construct BufferedInputStream from it.
+Int  i;
+while((i = in.read ())!= -1)
+System.out.Print(i);
+in.close();
+} catch (exception e){};
+}
+}

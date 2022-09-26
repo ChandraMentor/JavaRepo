@@ -1,0 +1,9 @@
+import java.lang.*;
+class DisplayFloat {
+public static void main(String args[]) {
+    float price;
+    price = 45.35F;
+    System.out.print("The price is ");
+    System.out.println(price);
+  }
+}

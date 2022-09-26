@@ -1,0 +1,23 @@
+ForStatement:
+
+             for ( ForInit opt ; Expression opt ; ForUpdate opt )
+
+                     Statement | Block of Statements
+
+    
+
+     ForInit:
+
+             StatementExpressionList
+
+             LocalVariableDeclaration
+
+     ForUpdate:
+
+             StatementExpressionList
+
+     StatementExpressionList:
+
+             StatementExpression
+
+             StatementExpressionList , StatementExpression

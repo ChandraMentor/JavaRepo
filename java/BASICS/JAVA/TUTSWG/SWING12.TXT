@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.awt.event.*;
+/* A sample demo for JSlider Component
+Author : Team - J
+Version : 1.0*/
+import javax.swing.*;
+public class buttonlistener implements ActionListener{
+	public void actionPerformed(ActionEvent evt) {
+		System.exit(0);
+	}
+}
+public class swing12 extends JFrame implements ActionListener{
+	JSlider slider;
+	JButton b;
+	JLabel l;
+	public swing11(){
+		super();
+		b= new JButton("Close");
+		b.addActionListener(new buttonlistener());
+		l = new JLabel("");
+		slider = new JSlider(0,100); //creates slider with 0, 100 as min , max values
+		slider.setMinorTickSpacing(1) ;
+		slider.setMajorTickSpacing(10) ;
+		slider.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent e) {
+				l.setText(((JSlider)e.getSource()).getValue());
+			}
+		})
+		JPanel contentpane = new JPanel();
+		contentpane.add(b);
+		contentpane.add(slider);
+		contentpane.add(l);
+		setContentPane(contentpane);
+	}
+	public void actionPerformed(ActionEvent evt) {
+		//exit when progress bar is filled
+		if (pbar.getValue() ==  pbar.getMaximum())
+			System.exit(0);
+		pbar.setValue(pbar.getValue()+5);
+	}
+	public static void main(String[] args){
+		JFrame win = new swing11();
+		win.pack();
+		win.setVisible(true);
+	}
+}

@@ -1,0 +1,14 @@
+class DoWhileDemo{
+	public static void main(String[] args){
+        int i;
+		i=10;
+	
+		do{
+		System.out.println("1.Add");
+		System.out.println("2.Substract");
+		System.out.println("3.Multiply");
+		i--;
+		}
+		while (i<=5);
+}
+}

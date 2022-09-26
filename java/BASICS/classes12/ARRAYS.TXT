@@ -1,0 +1,4 @@
+Arrays : an array is a collection of elements which can be accessed by
+	 using index.
+
+1) Arrays are objects in java language.

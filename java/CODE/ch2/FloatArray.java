@@ -1,0 +1,22 @@
+class FloatArray {
+public static void main(String args[]) {
+int a,b;
+a=10;b=20;
+
+float array[] = new float[5];
+    array[0] = new Float(3.4f);
+	array[1] = new Float(-7.0f);
+    array[2] = Float.valueOf("8.5f");
+    array[3] = Float.valueOf("6.223f");
+    array[4] = new Float(3.438f);
+System.out.println(a+b);
+System.out.println("The values are" + a + " " + b);
+System.out.println(array.length);
+
+System.out.println(array[0]);
+System.out.println(array[1]);
+System.out.println(array[2]);
+System.out.println(array[3]);
+System.out.println(array[4]);
+   }
+}

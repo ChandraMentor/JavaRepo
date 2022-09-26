@@ -1,0 +1,12 @@
+examples on how callbacks can be implemented using interfaces
+
+Please check classes9 for a similar kind of example.
+
+
+We strongly recommend students to look into this example as this
+the major technique used in most of the designs in order to enable the third 
+party vendors to enable the creation of add on products.
+
+the same kind of technique is used throughtthe design of many of the 
+API's in java implementation and also in future the same will be used
+in defining new api's.

@@ -1,0 +1,31 @@
+import java.io.*;
+class FileDemo {
+public static void main(String args[]) {
+ try {
+      // Display constants
+ System.out.println("pathSeparatorChar = " +
+ File.pathSeparatorChar);
+ System.out.println("separatorChar = " + 
+ File.separatorChar);
+
+// Test some methods
+File file = new File(args[0]);
+
+System.out.println("getName() = " + 
+    file.getName());
+System.out.println("getParent() = " + 
+   file.getParent());
+System.out.println("getAbsolutePath() = " + 
+ file.getAbsolutePath());
+ System.out.println("getPath() = " + 
+  file.getPath());
+ System.out.println("canRead() = " + 
+ file.canRead());
+ System.out.println("canWrite() = " + 
+file.canWrite());
+    }
+  catch(Exception e) {
+   e.printStackTrace();
+   }
+  }
+}

@@ -1,0 +1,14 @@
+import java.lang.*;
+class Add2Integers {
+public static void main(String args[]) {
+// Get first integer
+int d=Integer.parseInt(args[0]);
+// Get second integer
+int g=Integer.parseInt(args[1]);
+// Display their sum
+int sum=d+g;
+int sub=d-g;
+System.out.print("Sum is" + sum);
+   }
+}
+

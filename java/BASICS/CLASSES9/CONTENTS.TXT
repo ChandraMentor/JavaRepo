@@ -1,0 +1,5 @@
+examples on how callbacks can be implemented using interfaces
+
+Examples on String and String Buffer Classes
+
+Examples on cloning

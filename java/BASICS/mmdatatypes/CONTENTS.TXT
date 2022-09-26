@@ -1,0 +1,4 @@
+This directory contains sample programs to be used
+when discussing about operators and data type.All these
+programs can be used to explain about maximum and minimum
+ values each data type can take in Java.
