@@ -1,0 +1,26 @@
+CPM properties are
+1) Pool Name: OraclePool
+
+Driver Info
+2) Driver class: oracle.jdbc.driver.OracleDriver
+3) URL:  jdbc:oracle:oci8:@connect_string
+4) user=scott
+password=tiger
+
+pool properties
+5) initialCapacity=2
+6) maxCapacity=10
+7) increment=2
+8) delay=1 Sec
+
+shrink & refresh props
+9) refreshPeriod=10
+10) testTable=emp
+11) shrinkPeriod=15 min
+12) isShrinkAllowed=True
+
+13) JNDI name=OraclePool
+14) JNDI Server=
+
+15) supportXATransactionsWithNonXADriver=True
+

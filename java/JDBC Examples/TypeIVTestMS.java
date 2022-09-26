@@ -1,0 +1,21 @@
+import java.sql.*;
+
+public class TypeIVTestMS{
+public static void main(String rags[]) throws Exception,SQLException{
+
+Class.forName("com.mysql.jdbc.Driver");	
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","root");
+Statement stmt=con.createStatement();
+ResultSet rs=stmt.executeQuery("select * from emp");
+
+while(rs.next()){
+System.out.println(rs.getInt(1));
+System.out.println(rs.getString(2));
+System.out.println(rs.getDouble(3));
+System.out.println();
+}// while()
+rs.close();
+stmt.close();
+con.close();
+}// main()
+}// class

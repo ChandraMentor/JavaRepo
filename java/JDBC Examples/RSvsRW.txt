@@ -1,0 +1,26 @@
+/*
+e:\active\advjava\am1\JDBC\RSvsRW.txt
+
+Difference between JDBC 1.0 ResultSet and JDBC2.0 ResultSet
+
+JDBC 1.0 ResultSet (JDK1.2X)
+* One-time retrival
+*Unidirectional fetch
+
+JDBC 2.0 RS (JDK1.4)
+*Bi-directional fetch
+*Random selection of records
+*Updatable (insert, update and delete)
+
+Limitation
+--------------
+1) RS cannot survive without DB connection object
+2) RS expensive for longer usage
+
+JDBC 3.0 ResultSet objects are called as RowSet
+1) Connection less ResultSet object
+2) Serializable ResultSet object is RowSet
+
+
+
+*/

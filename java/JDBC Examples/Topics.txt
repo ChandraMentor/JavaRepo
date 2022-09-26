@@ -1,0 +1,21 @@
+JDBC 2.0
+-------------
+1) Introduction to JDBC
+2) JDBC architecture
+3) JDBC drivers
+4) First JDBC application
+
+5) Other JDBC programs (insert, update and delete) using different class of JDBC API
+
+6) JDBC Driver details
+7) JDBC 2.0 features
+i) ResultSet Enhancement
+ a) Scrollable ResultSet
+ b) Updatable RS
+ii) ResultSet Vs RowSet
+iii) Batch updations
+iv) TX Isolation levels
+v) JDBC Connection Pool Management
+vi) Handling BLOB and CLOB data types
+
+8) Intro to JDBC 3.0

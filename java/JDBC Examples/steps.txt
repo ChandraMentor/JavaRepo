@@ -1,0 +1,34 @@
+
+BackEnd: An environment for storing and manipulating the data from the database.
+      Native BackEnd
+         Ms-Access
+      Remote BackEnd
+         Oracle
+         Ms-SqlServer
+         MySql
+         Sybase etc.
+
+Front End: An environment to access the data and perfrom manipulation
+           VB.Net
+           Swing/Applet
+        
+  Odbc: (Open Database Connectivity)    
+
+Limitations of ODBC:
+  1) It is developed based on pointers.
+  2) Odbc uses C pointer function call.
+
+
+Jdbc (Java Database Connectivity)
+   1) JdbcOdbcBridgeDriver
+   2) Java Native API Driver
+   3) Java Net Protocol Driver
+   4) Java Native protocol Driver
+
+
+
+
+
+   9949011559
+ 
+  
