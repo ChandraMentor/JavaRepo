@@ -1,0 +1,12 @@
+package com.around.test;
+
+public class AroundTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+	}
+
+}

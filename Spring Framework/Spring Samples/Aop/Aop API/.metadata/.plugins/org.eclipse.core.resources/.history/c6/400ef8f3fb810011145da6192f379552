@@ -1,0 +1,5 @@
+package com.stock.cache;
+
+public class StockCache {
+
+}

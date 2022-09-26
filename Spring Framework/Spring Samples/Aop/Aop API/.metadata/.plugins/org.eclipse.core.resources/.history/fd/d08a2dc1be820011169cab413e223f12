@@ -1,0 +1,9 @@
+package com.ta.beans;
+
+import org.springframework.aop.ThrowsAdvice;
+
+public class ExceptionLogger implements ThrowsAdvice {
+	public void throwing(NullPointerException npe) {
+		System.out.println(npe.printStackTrace());
+	}
+}

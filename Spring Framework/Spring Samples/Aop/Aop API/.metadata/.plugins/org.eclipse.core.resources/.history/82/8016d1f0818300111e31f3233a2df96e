@@ -1,0 +1,13 @@
+package com.pointcut.bean;
+
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
+
+public class WeatherStationAdvice implements MethodInterceptor {
+
+	public Object invoke(MethodInvocation arg0) throws Throwable {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

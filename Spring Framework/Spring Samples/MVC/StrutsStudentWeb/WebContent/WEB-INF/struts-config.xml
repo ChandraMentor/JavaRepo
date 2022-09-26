@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="studentForm" type="com.ss.form.StudentForm" />
+	</form-beans>
+
+	<action-mappings>
+		<action path="/insert"
+			type="org.springframework.web.struts.DelegatingActionProxy" 
+			name="studentForm"
+			validate="true" input="/insert.jsp">
+
+			<forward name="success" path="/success.jsp" />
+		</action>
+
+	</action-mappings>
+
+	<!-- Spring Struts plugin -->
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="/WEB-INF/application-context.xml" />
+	</plug-in>
+
+</struts-config>

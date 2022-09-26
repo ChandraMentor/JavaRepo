@@ -1,0 +1,30 @@
+package com.at.service;
+
+import org.springframework.stereotype.Service;
+
+import com.at.business.EmployeeBO;
+import com.at.business.EmployeeDepartmentBO;
+import com.at.dao.EmployeeDao;
+import com.at.dao.EmployeeDepartmentDao;
+
+@Service("manageEmployeeService")
+public class ManageEmployeeService {
+	private EmployeeDao employeeDao;
+	private EmployeeDepartmentDao employeeDepartmentDao;
+
+	public void newJoinee(EmployeeBO employeeInfo,
+			EmployeeDepartmentBO empDeptInfo) {
+		employeeDao.insert(employeeInfo);
+		employeeDepartmentDao.insert(empDeptInfo);
+	}
+
+	public void setEmployeeDao(EmployeeDao employeeDao) {
+		this.employeeDao = employeeDao;
+	}
+
+	public void setEmployeeDepartmentDao(
+			EmployeeDepartmentDao employeeDepartmentDao) {
+		this.employeeDepartmentDao = employeeDepartmentDao;
+	}
+
+}

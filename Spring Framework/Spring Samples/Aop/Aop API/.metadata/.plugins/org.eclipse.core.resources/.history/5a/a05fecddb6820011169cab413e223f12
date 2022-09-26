@@ -1,0 +1,6 @@
+package com.sba.sm;
+
+public class SecurityManager {
+	private static ThreadLocal<UserInfo> data = new ThreadLocal<UserInfo>();
+
+}

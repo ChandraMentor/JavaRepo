@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.stock.bean.StockViewer&apos; to &apos;StockDelegate&apos;&#x0D;&#x0A;- Original project: &apos;CacheAdvice&apos;&#x0D;&#x0A;- Original element: &apos;com.stock.bean.StockViewer&apos;&#x0D;&#x0A;- Renamed element: &apos;com.stock.bean.StockDelegate&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;StockViewer&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.stock.bean{StockViewer.java[StockViewer" matchStrategy="1" name="StockDelegate" qualified="false" references="true" similarDeclarations="false" stamp="1333945705301" textual="false" version="1.0"/>
+</session>

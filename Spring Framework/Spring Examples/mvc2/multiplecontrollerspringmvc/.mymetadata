@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="multiplecontrollerspringmvc"
+  id="myeclipse.1353995124691"
+  context-root="/springmvc"
+  j2ee-spec="5.0"
+  archive="multiplecontrollerspringmvc.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

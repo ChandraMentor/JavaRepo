@@ -1,0 +1,5 @@
+package com.mba.beans;
+
+public class SalaryCal {
+
+}

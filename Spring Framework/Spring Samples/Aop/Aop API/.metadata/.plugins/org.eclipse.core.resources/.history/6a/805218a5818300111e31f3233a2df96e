@@ -1,0 +1,5 @@
+package com.pointcut.bean;
+
+public class WeatherStation {
+
+}

@@ -1,0 +1,22 @@
+package com.pointcut.test;
+
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+
+import com.pointcut.bean.WeatherStation;
+import com.pointcut.bean.WeatherStationAdvice;
+import com.pointcut.bean.WeatherStationPointcut;
+
+public class PointCutTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ProxyFactory pf = new ProxyFactory();
+		pf.setTarget(new WeatherStation());
+		pf.addAdvisor(new DefaultPointcutAdvisor(new WeatherStationPointcut(),
+				new WeatherStationAdvice()));
+	}
+
+}

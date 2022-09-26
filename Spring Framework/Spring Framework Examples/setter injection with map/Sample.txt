@@ -1,0 +1,35 @@
+package sample;
+import java.lang.String;
+import java.lang.System;
+
+public class EncapEmployee {
+	private int empage;
+	private float empsalary;
+	private String empadress;
+	public int empno;
+	public String empname;
+	
+    void setdata(int en,String em,int emag,float emps,String empadr){
+		empno=en;
+		empname=em;
+		empage=emag;
+		empsalary=emps;
+		empadress=empadr;
+		}
+	 void getdata(){
+ System.out.println("employeenumber & employeename" +empno + " " +empname);
+System.out.println("employeeage,employeesalary,empadress is" +empage + " " +empsalary + "" +empadress);
+	 }
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+EncapEmployee Ed1=new EncapEmployee();
+Ed1.getdata();
+
+
+
+
+	}
+
+}

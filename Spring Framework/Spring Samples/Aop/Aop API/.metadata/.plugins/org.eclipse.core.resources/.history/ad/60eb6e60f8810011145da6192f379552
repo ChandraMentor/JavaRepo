@@ -1,0 +1,5 @@
+package com.around.beans;
+
+public class Calculator {
+
+}

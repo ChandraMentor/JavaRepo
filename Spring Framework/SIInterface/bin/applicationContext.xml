@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> 
+<beans>
+<bean id="address1" class="Address">
+<property name="addressLine1" value="51,GachiBowli"></property>
+<property name="city" value="Hyderabad"></property>
+<property name="state" value="Telangana"></property>
+<property name="country" value="India"></property>
+</bean>
+
+<bean id="obj" class="Employee">
+<property name="id" value="1"></property>
+<property name="name" value="Chandan"></property>
+<property name="address" ref="address1"></property>
+</bean>
+</beans>

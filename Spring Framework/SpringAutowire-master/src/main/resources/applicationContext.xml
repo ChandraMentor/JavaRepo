@@ -1,0 +1,91 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+<!--
+  Removed from original.  Was working, but IDE was showing errors.
+
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+-->
+
+    <bean id="color" class="Color">
+        <property name="baseColor" value="white"/>
+        <property name="textureColor" value="grey"/>
+    </bean>
+    <!-- A second use of the Color class, setting different colors -->
+    <!-- Shows how @Qualifier annotation works, in Tiger class -->
+    <bean id="differentColors" class="Color">
+        <property name="baseColor" value="yellow" />
+        <property name="textureColor" value="black" />
+    </bean>
+    <!--
+    Auto-Wiring 'no'  This is the default mode.
+    The only thing needed here is to wire your bean via the ref attribute in the bean definition.
+    Cat.java is the bean that will be used to wire the color bean with the auto-wiring 'no' mode.
+    -->
+    <bean id="cat" class="Cat">
+        <property name="name" value="cat"/>
+        <property name="color" ref="color"/>
+    </bean>
+    <!--
+    Auto-Wiring ‘byName’
+    We are using the Dog.java class to wire the color bean in the auto-wiring byName mode.
+
+    Getting warning "Unnecessary use of autowired dependencies"
+    -->
+    <bean id="dog" class="Dog" autowire="byName">
+        <property name="name" value="dog" />
+    </bean>
+    <!--
+    Auto-Wiring ‘byType’
+    The Elephant.java class will be used to wire the color bean with auto-wiring byType mode.
+    This needs to be commented out, for the last example to work.
+    -->
+    <!--<bean id="elephant" class="Elephant" autowire="byType">-->
+        <!--<property name="name" value="elephant" />-->
+    <!--</bean>-->
+    <!--
+    Auto-Wiring `constructor'
+    Note that this mode is similar to just defining the color bean reference using the
+    constructor-arg element in the frog bean definition.
+
+    Getting warning "Unnecessary use of autowired dependencies"
+    -->
+    <bean id="frog" class="Frog" autowire="constructor">
+        <property name="name" value="frog" />
+    </bean>
+    <!-- ============================================== -->
+    <!--
+    Two ways of enabling autowiring annotation.  Method #2 didn't work for me.
+    -->
+    <!-- #1 -->
+    <context:annotation-config />
+    <!-- #2 -->
+    <!--<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />-->
+
+    <bean id="tiger" class="Tiger">
+        <property name="name" value="tiger" />
+    </bean>
+
+
+</beans>

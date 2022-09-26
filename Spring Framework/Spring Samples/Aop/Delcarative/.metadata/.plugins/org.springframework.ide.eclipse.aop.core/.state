@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="AroundAdvice">
+<aspect-definition advice-class-name="com.aa.beans.CalculatorAspect" advice-method-name="inspect" advice-type="AROUND" aspect-end-line-number="15" aspect-name="calculatorAspect" aspect-start-line-number="14" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/AroundAdvice/src/com/aa/common/aop-beans.xml" pointcut-expression="execution(* com.aa.beans.*.add(..))" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:AroundAdvice|3:src/com/aa/common/aop-beans.xml|7:beans:7|8:calculator:9" bean-file="/AroundAdvice/src/com/aa/common/aop-beans.xml" bean-start-line="9" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AroundAdvice/src/com/aa/common/aop-beans.xml" source="=AroundAdvice/src&lt;com.aa.beans{CalculatorAspect.java[CalculatorAspect~inspect~QProceedingJoinPoint;" source-start-line="6" target="=AroundAdvice/src&lt;com.aa.beans{Calculator.java[Calculator~add~I~I" target-start-line="5"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="AfterThrowing">
+<aspect-definition advice-class-name="com.at.beans.NullPointerAspect" advice-method-name="handle" advice-type="AFTER_THROWING" aspect-end-line-number="17" aspect-name="nullpointerAspect" aspect-start-line-number="17" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/AfterThrowing/src/com/at/common/aop-beans.xml" pointcut-expression="execution(* com.at.beans.DepartmentDao.insert*(..))" proxy-target-class="false" throwing="npe">
+<aop-reference advice-type="AFTER_THROWING" bean="1:BeansModel|2:AfterThrowing|3:src/com/at/common/aop-beans.xml|7:beans:9|8:departmentDao:11" bean-file="/AfterThrowing/src/com/at/common/aop-beans.xml" bean-start-line="11" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AfterThrowing/src/com/at/common/aop-beans.xml" source="=AfterThrowing/src&lt;com.at.beans{NullPointerAspect.java[NullPointerAspect~handle~QNullPointerException;" source-start-line="5" target="=AfterThrowing/src&lt;com.at.beans{DepartmentDao.java[DepartmentDao~insert~I" target-start-line="4"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="AfterReturning">
+<aspect-definition advice-class-name="com.ar.beans.KeyCheckAspect" advice-method-name="check" advice-type="AFTER_RETURNING" aspect-end-line-number="17" aspect-name="keyCheckAspect" aspect-start-line-number="16" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/AfterReturning/src/com/ar/common/aop-beans.xml" pointcut-expression="execution(* com.ar.beans.KeyGenerator.generateKey(..)) and args(bitType,..))" proxy-target-class="false" returning="retVal">
+<aop-reference advice-type="AFTER_RETURNING" bean="1:BeansModel|2:AfterReturning|3:src/com/ar/common/aop-beans.xml|7:beans:5|8:keyGenerator:7" bean-file="/AfterReturning/src/com/ar/common/aop-beans.xml" bean-start-line="7" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AfterReturning/src/com/ar/common/aop-beans.xml" source="=AfterReturning/src&lt;com.ar.beans{KeyCheckAspect.java[KeyCheckAspect~check~QJoinPoint;~I~I" source-start-line="7" target="=AfterReturning/src&lt;com.ar.beans{KeyGenerator.java[KeyGenerator~generateKey~I" target-start-line="6"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="BeforeAdvice">
+<aspect-definition advice-class-name="com.before.beans.MethodCallCountAspect" advice-method-name="monitor" advice-type="BEFORE" aspect-end-line-number="14" aspect-name="statementMonitorAspect" aspect-start-line-number="14" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/BeforeAdvice/src/com/before/common/aop-beans.xml" pointcut-expression="execution(* com.before.beans.StatementGenerator.*(..))" proxy-target-class="false">
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:BeforeAdvice|3:src/com/before/common/aop-beans.xml|7:beans:6|8:statementGenerator:8" bean-file="/BeforeAdvice/src/com/before/common/aop-beans.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/BeforeAdvice/src/com/before/common/aop-beans.xml" source="=BeforeAdvice/src&lt;com.before.beans{MethodCallCountAspect.java[MethodCallCountAspect~monitor~QJoinPoint;" source-start-line="8" target="=BeforeAdvice/src&lt;com.before.beans{StatementGenerator.java[StatementGenerator~generateStatement~QString;~I~I" target-start-line="6"/>
+</aspect-definition>
+</aop-project>
+</aop-reference-model>

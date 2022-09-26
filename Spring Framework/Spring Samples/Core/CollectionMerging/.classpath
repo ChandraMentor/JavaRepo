@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/Online Class/springjars/springjars/core/core/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Online Class/springjars/springjars/core/core/com.springsource.org.apache.log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/Online Class/springjars/springjars/core/core/jmxtools-1.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/Online Class/springjars/springjars/core/core/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/Online Class/springjars/springjars/core/core/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/Online Class/springjars/springjars/core/core/org.springframework.context-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/Online Class/springjars/springjars/core/core/org.springframework.core-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/Online Class/springjars/springjars/core/core/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

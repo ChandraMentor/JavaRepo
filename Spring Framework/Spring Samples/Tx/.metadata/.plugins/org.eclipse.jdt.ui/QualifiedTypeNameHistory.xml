@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.Throwable"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
+<fullyQualifiedTypeName name="com.dt.dao.EmployeeDao"/>
+<fullyQualifiedTypeName name="com.dt.dao.EmployeeDepartmentDao"/>
+<fullyQualifiedTypeName name="com.dt.service.ManageEmployeeService"/>
+<fullyQualifiedTypeName name="com.dt.business.EmployeeBO"/>
+<fullyQualifiedTypeName name="com.dt.test.DTTest"/>
+<fullyQualifiedTypeName name="com.dt.business.EmployeeDepartmentBO"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="javax.inject.Inject"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+</qualifiedTypeNameHistroy>

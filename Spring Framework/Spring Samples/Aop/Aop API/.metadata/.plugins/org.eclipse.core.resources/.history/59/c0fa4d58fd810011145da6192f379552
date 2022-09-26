@@ -1,0 +1,8 @@
+package com.stock.bean;
+
+public class StockViewer {
+	public void print(String qn) {
+		StockDelegate delegate = new StockDelegate();
+		System.out.println(delegate.viewStock(qn));
+	}
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="AroundAdvice">
+<aspect-definition advice-class-name="com.aa.beans.CalculatorAspect" advice-method-name="inspect(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="9" aspect-name="com.aa.beans.CalculatorAspect#AroundAdvice#src/com/aa/common/aop-beans.xml#9" aspect-start-line-number="9" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/AroundAdvice/src/com/aa/common/aop-beans.xml" pointcut-expression="myCalculatorPointCut()" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:AroundAdvice|3:src/com/aa/common/aop-beans.xml|7:beans:5|8:calculator:8" bean-file="/AroundAdvice/src/com/aa/common/aop-beans.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AroundAdvice/src/com/aa/common/aop-beans.xml" source="=AroundAdvice/src&lt;com.aa.beans{CalculatorAspect.java[CalculatorAspect~inspect~QProceedingJoinPoint;" source-start-line="14" target="=AroundAdvice/src&lt;com.aa.beans{Calculator.java[Calculator~add~I~I" target-start-line="4"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="BeforeAdvice">
+<aspect-definition advice-class-name="com.ba.beans.LoggingBeforeAspect" advice-method-name="log(org.aspectj.lang.JoinPoint, java.lang.String, float)" advice-type="BEFORE" aspect-end-line-number="9" aspect-name="com.ba.beans.LoggingBeforeAspect#BeforeAdvice#src/com/ba/common/aop-beans.xml#9" aspect-start-line-number="9" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/BeforeAdvice/src/com/ba/common/aop-beans.xml" pointcut-expression="loggingPointCut(accno,amount)" proxy-target-class="false">
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:BeforeAdvice|3:src/com/ba/common/aop-beans.xml|7:beans:6|8:bankTransact:8" bean-file="/BeforeAdvice/src/com/ba/common/aop-beans.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/BeforeAdvice/src/com/ba/common/aop-beans.xml" source="=BeforeAdvice/src&lt;com.ba.beans{LoggingBeforeAspect.java[LoggingBeforeAspect~log~QJoinPoint;~QString;~F" source-start-line="17" target="=BeforeAdvice/src&lt;com.ba.beans{BankTrasact.java[BankTrasact~withdraw~QString;~F" target-start-line="4"/>
+</aspect-definition>
+</aop-project>
+</aop-reference-model>

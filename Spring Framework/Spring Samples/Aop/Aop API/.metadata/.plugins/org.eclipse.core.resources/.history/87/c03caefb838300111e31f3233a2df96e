@@ -1,0 +1,14 @@
+package com.pointcut.bean;
+
+import java.lang.reflect.Method;
+
+import org.springframework.aop.support.DynamicMethodMatcherPointcut;
+
+public class WeatherStationDynamicPointcut extends DynamicMethodMatcherPointcut {
+
+	public boolean matches(Method method, Class<?> objectClass, Object[] args) {
+
+		return false;
+	}
+
+}

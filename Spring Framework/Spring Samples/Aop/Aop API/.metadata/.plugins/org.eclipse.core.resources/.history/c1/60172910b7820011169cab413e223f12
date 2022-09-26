@@ -1,0 +1,5 @@
+package com.sba.beans;
+
+public class LoanCalculator {
+
+}

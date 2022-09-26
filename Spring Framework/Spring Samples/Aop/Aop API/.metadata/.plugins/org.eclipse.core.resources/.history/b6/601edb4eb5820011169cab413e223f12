@@ -1,0 +1,7 @@
+package com.mba.beans;
+
+public class SalaryCal {
+	public float computeSalary(String empId) {
+		return 3324.34f;
+	}
+}

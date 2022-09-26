@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.aspectj.org.eclipse.jdt.core.dom.AroundAdviceDeclaration"/>
+<fullyQualifiedTypeName name="org.aopalliance.intercept.MethodInvocation"/>
+<fullyQualifiedTypeName name="com.around.beans.Calculator"/>
+<fullyQualifiedTypeName name="com.around.beans.CalculatorAdvice"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.stock.bean.StockService"/>
+<fullyQualifiedTypeName name="com.stock.cache.StockCache"/>
+<fullyQualifiedTypeName name="com.stock.bean.StockCacheAdvisor"/>
+<fullyQualifiedTypeName name="com.stock.bean.StockViewer"/>
+<fullyQualifiedTypeName name="com.stock.bean.StockDelegate"/>
+<fullyQualifiedTypeName name="com.mba.beans.LoggingAdvice"/>
+<fullyQualifiedTypeName name="com.mba.beans.SalaryCal"/>
+<fullyQualifiedTypeName name="java.lang.ThreadLocal"/>
+<fullyQualifiedTypeName name="com.sba.sm.UserInfo"/>
+<fullyQualifiedTypeName name="org.springframework.aop.MethodBeforeAdvice"/>
+<fullyQualifiedTypeName name="java.lang.IllegalAccessException"/>
+<fullyQualifiedTypeName name="com.sba.beans.SecurityAdvice"/>
+<fullyQualifiedTypeName name="com.sba.beans.LoanCalculator"/>
+<fullyQualifiedTypeName name="com.sba.sm.SecurityManager"/>
+<fullyQualifiedTypeName name="org.springframework.aop.AfterReturningAdvice"/>
+<fullyQualifiedTypeName name="com.ara.beans.LoggingAdvice"/>
+<fullyQualifiedTypeName name="com.ara.beans.EmployeeDAO"/>
+<fullyQualifiedTypeName name="org.springframework.aop.ThrowsAdvice"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="com.ta.beans.ExceptionLogger"/>
+<fullyQualifiedTypeName name="com.ta.beans.Thrower"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+<fullyQualifiedTypeName name="org.aopalliance.intercept.MethodInterceptor"/>
+<fullyQualifiedTypeName name="org.springframework.aop.support.StaticMethodMatcherPointcut"/>
+<fullyQualifiedTypeName name="org.springframework.aop.framework.ProxyFactory"/>
+<fullyQualifiedTypeName name="com.pointcut.bean.WeatherStation"/>
+<fullyQualifiedTypeName name="org.springframework.aop.support.DefaultPointcutAdvisor"/>
+<fullyQualifiedTypeName name="com.pointcut.bean.WeatherStationPointcut"/>
+<fullyQualifiedTypeName name="com.pointcut.bean.WeatherStationAdvice"/>
+<fullyQualifiedTypeName name="org.springframework.aop.support.DynamicMethodMatcherPointcut"/>
+<fullyQualifiedTypeName name="com.pointcut.bean.WeatherStationDynamicPointcut"/>
+<fullyQualifiedTypeName name="org.springframework.aop.support.NameMatchMethodPointcut"/>
+</qualifiedTypeNameHistroy>

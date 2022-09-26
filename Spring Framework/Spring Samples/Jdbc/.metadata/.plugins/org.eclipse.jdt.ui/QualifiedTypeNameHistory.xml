@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.emp.dao.EmployeeDao"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.PreparedStatementCallback"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.BatchPreparedStatementSetter"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"/>
+<fullyQualifiedTypeName name="com.emp.dao.NamedParameterEmployeeDao"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.MapSqlParameterSource"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.simple.SimpleJdbcInsert"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.SqlParameterSource"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource"/>
+<fullyQualifiedTypeName name="com.emp.dao.SimpleEmployeeDao"/>
+<fullyQualifiedTypeName name="com.emp.business.NamedEmployee"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.object.MappingSqlQuery"/>
+<fullyQualifiedTypeName name="java.sql.Types"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="com.so.dao.EmployeeOperations"/>
+<fullyQualifiedTypeName name="com.so.dao.EmployeeOperations.SelectEmployee"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.object.SqlUpdate"/>
+<fullyQualifiedTypeName name="com.emp.business.Employee"/>
+<fullyQualifiedTypeName name="com.so.dao.EmployeeOperations.UpdateEmployee"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.SqlParameter"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.support.JdbcDaoSupport"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.support.KeyHolder"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.support.GeneratedKeyHolder"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.PreparedStatementCreator"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="com.ag.dao.DepartmentDao"/>
+<fullyQualifiedTypeName name="com.ag.business.DepartmentBO"/>
+</qualifiedTypeNameHistroy>

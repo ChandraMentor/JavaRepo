@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://www.springsource.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>SpringSource.org</title>
+ <link>http://www.springsource.org</link>
+ <description>Welcome to the home of Spring, the leading platform to build and run enterprise Java applications. Led and sustained by SpringSource, Spring delivers significant benefits for many projects, increasing development productivity and runtime performance while improving test coverage and application quality.</description>
+ <language>en</language>
+<item>
+ <title>Spring Mobile 1.0.0 Released</title>
+ <link>http://www.springsource.org/spring-mobile/news/1.0.0-released</link>
+ <description>&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+
+&lt;p&gt;
+We are pleased to announce the general availability of &lt;a href=&quot;http://www.springsource.org/spring-mobile&quot;&gt;Spring Mobile 1.0&lt;/a&gt;!
+&lt;/p&gt;
+&lt;p&gt;Spring Mobile provides extensions to Spring MVC that aid in the development of cross-platform mobile web applications.&lt;/p&gt;
+
+&lt;p&gt;This GA release includes minor fixes and changes since the RC2 release. See the &lt;a href=&quot;http://static.springsource.org/spring-mobile/docs/1.0.0.RELEASE/changelog.txt&quot;&gt;changelog&lt;/a&gt; and &lt;a href=&quot;http://static.springsource.org/spring-mobile/docs/1.0.0.RELEASE/reference/html/&quot;&gt;reference manual&lt;/a&gt; for more information.
+&lt;/p&gt;
+
+&lt;p&gt;To retrieve the software, 
+&lt;a href=&quot;http://www.springsource.com/download/community?project=Spring%20Mobile&quot;&gt;download&lt;/a&gt; the release distribution, or add the &lt;a href=&quot;http://static.springsource.org/spring-mobile/docs/1.0.0.RELEASE/reference/html/device.html#spring-mobile-device-howtoget&quot;&gt;maven artifacts&lt;/a&gt; to your project. Sample apps are available at &lt;a href=&quot;https://github.com/SpringSource/spring-mobile-samples&quot;&gt;github.com/SpringSource/spring-mobile-samples&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We want to thank Scott Rossillo, Tristan Burch, Craig Walls, and Keith Donald for their contributions to this GA release, and we look forward to working with them and the rest of the Spring community on future releases.  If you are building a mobile web app, we encourage you try out Spring Mobile 1.0 and &lt;a href=&quot;http://forum.springsource.org/forumdisplay.php?f=85&quot;&gt;collaborate&lt;/a&gt; with us on the next iteration of the project.&lt;/p&gt;</description>
+ <comments>http://www.springsource.org/spring-mobile/news/1.0.0-released#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Mon, 14 May 2012 13:30:00 +0000</pubDate>
+ <dc:creator>Roy Clarkson</dc:creator>
+ <guid isPermaLink="false">3549 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>Video: More Practical Tips and Tricks with Spring Integration</title>
+ <link>http://www.springsource.org/node/3550</link>
+ <description>&lt;p&gt;This video provides a follow-up session to &lt;a href=&quot;http://blog.springsource.org/author/ozhurakousky/&quot;&gt;Oleg Zhurakousky&lt;/a&gt;&#039;s successful &lt;a href=&quot;http://www.youtube.com/watch?v=RY6dNUL8k6o&quot;&gt;Spring Integration Tips and Tricks&lt;/a&gt; webinar exploring deeper and more complex patterns for integration. The questions for this session came out of the actual customer engagements as well as the questions that are most frequently asked on the Spring Integration forums. In this edition of &quot;Practical Tips-and-Tricks&quot; Oleg covers the advanced topics of enterprise integration such as advanced aggregation and resequencing, asynchronous message flows, message ID customizations, content enrichment and advanced message routing and more. This video is based on a refined version of &lt;a href=&quot;http://www.infoq.com/presentations/Spring-Integration-Practical-Tips-and-Tricks&quot;&gt;Oleg&#039;s very successful talk delivered at SpringOne 2GX 2011&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To review basics of messaging and Spring Integration watch this &lt;a href=&quot;http://www.youtube.com/watch?v=NAWpVS8t_Ug&quot;&gt;Message Driven Architecture&lt;/a&gt; video by Mark Fisher and watch the previous video in this series: &lt;a href=&quot;http://www.youtube.com/watch?v=RY6dNUL8k6o&quot;&gt;Spring Integration Tips and Tricks&lt;/a&gt;.
+&lt;/p&gt;
+
+
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;object width=&quot;560&quot; height=&quot;349&quot;&gt;
+&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/embed/9O2BWBUxuiI?version=3&amp;amp;hl=en_US&quot; /&gt;
+&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;embed src=&quot;http://www.youtube.com/v/9O2BWBUxuiI?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;560&quot; height=&quot;349&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
+
+&lt;p&gt;Be sure to thumbs up the presentation if you find it useful and &lt;a href=&quot;http://www.youtube.com/subscription_center?adduser=SpringSourceDev&quot;&gt;subscribe to the SpringSourceDev channel&lt;/a&gt; to see other recordings and screencasts.&lt;/p&gt;
+</description>
+ <comments>http://www.springsource.org/node/3550#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Fri, 11 May 2012 17:17:49 +0000</pubDate>
+ <dc:creator>Adam Fitzgerald</dc:creator>
+ <guid isPermaLink="false">3550 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>This Week in Spring, May 8th, 2012 </title>
+ <link>http://www.springsource.org/node/3548</link>
+ <description> 
+
+&lt;P&gt; Welcome back to another installment of &lt;EM&gt;This Week in Spring!&lt;/EM&gt; And what a week it&#039;s been!  We&#039;ve got a lot of content to cover, so let&#039;s get to it.
+&lt;/P&gt; 
+&lt;OL&gt; 
+	 &lt;li&gt; Spring web guru &lt;em&gt;&lt;a href=&quot;http://blog.springsource.org/author/rstoyanchev/&quot;&gt;Rossen Stoyanchev&lt;/a&gt;&lt;/em&gt; has been blogging about some of the cool new features that are coming up in Spring MVC 3.2. These include &lt;A href = &quot;http://blog.springsource.org/2012/05/06/spring-mvc-3-2-preview-introducing-servlet-3-async-support/&quot;&gt;asynchronous support based on Servlet 3&lt;/A&gt;, and   the
+		&lt;a href = &quot;http://blog.springsource.org/2012/05/08/spring-mvc-3-2-preview-techniques-for-real-time-updates/&quot;&gt;revised support for long polling&lt;/a&gt; (&lt;EM&gt;server side push&lt;/EM&gt;) both important areas for the new emerging style of web interaction. 
+		&lt;/li&gt;
+   &lt;LI&gt; Project lead Michael Hunger announced the availability &lt;a href = &quot;http://www.springsource.org/node/3547&quot;&gt;of Spring Data Neo4J  2.1.0 RC 1.&lt;/A&gt; The new release includes many new features, including computability with Neo4j 1.7.GA. &lt;/LI&gt;
+		 &lt;LI&gt;  &lt;em&gt;&lt;a href=&quot;http://blog.springsource.org/author/ogierke/&quot;&gt;Oliver Gierke&lt;/a&gt;&lt;/em&gt; this morning &lt;a href = &quot;http://www.springsource.org/node/3546&quot;&gt;announced Spring Data MongoDB 1.1.0 M1&lt;/A&gt;, the latest release containing the much anticipated support for &lt;A href = &quot;https://jira.springsource.org/browse/DATAMONGO-6&quot;&gt;GridFS&lt;/A&gt;, JSR 303, new repository events, and CDI integration for repositories. 
+		&lt;/LI&gt;
+		&lt;LI&gt; &lt;em&gt;Geraint Jones&lt;/em&gt; has written up &lt;a href = &quot;http://city81.blogspot.co.uk/2012/05/using-spring-profile-with.html&quot;&gt;a look at Spring 3.1&#039;s profiles&lt;/A&gt;, as well as the &lt;CODE&gt;@EnableAspectJAutoProxy&lt;/CODE&gt;, which declaratively turns on Spring&#039;s AspectJ component support.  &lt;/LI&gt;
+		&lt;LI&gt; &lt;em&gt;Matt Vickery&lt;/em&gt; has put together a nice look at &lt;a href = &quot;http://java.dzone.com/articles/spring-integration-payload-0&quot;&gt;Spring Integration&#039;s support for the claim-check pattern&lt;/A&gt;, which lets you propagate an ID as a receipt (&amp;agrave; la a &lt;EM&gt;claim check&lt;/EM&gt;) for a more substantial object, which has been durably persisted and sidelined. The more substantial object (a file, perhaps, or a large structure) can be &lt;EM&gt;reclaimed&lt;/EM&gt; later with the receipt.  &lt;/LI&gt;
+		&lt;LI&gt; &lt;em&gt;Mr. Vickery&lt;/em&gt; has also put together a nice post explaining how to &lt;a href = &quot;http://java.dzone.com/articles/spring-integration&quot;&gt; transform header data into payload data using Spring Integration&lt;/a&gt;. Keep up the great Spring Integration work Matt! &lt;/LI&gt;
+
+ &lt;LI&gt; The &lt;em&gt;Java Clue&lt;/em&gt; blog has an interesting post on how to &lt;A href = &quot;http://javaclue.blogspot.com/2012/05/soap-web-service-using-spring-ws-20.html&quot;&gt;create a SOAP-based web service using Spring WS 2.0&lt;/a&gt;.  
+	 &lt;/LI&gt;
+ &lt;LI&gt;  &lt;em&gt;Roberto van der Linden&lt;/em&gt; has put together an interesting post introducing &lt;a href = &quot;http://blog.orange11.nl/2012/05/03/creating-a-mobile-version-of-your-website-with-spring-mobile-and-sitemesh/ &quot;&gt;the Spring Mobile project, as well as how to use it with Sitemesh&lt;/A&gt;. Funny, somebody &lt;EM&gt;just&lt;/Em&gt; asked me about this the other day in &lt;A href = &quot;http://opentour.cloudfoundry.com/2012/moscow&quot;&gt;Moscow&lt;/A&gt;!  Now I know... &lt;/LI&gt;
+ &lt;LI&gt;  The &lt;em&gt;Dev Trigger&lt;/em&gt; blog has put together a &lt;a href = &quot;http://devtrigger.blogspot.com/2012/05/spring-3-task-execution-and-scheduling.html&quot;&gt;review of the Spring 3 task executor and scheduling support.&lt;/A&gt;
+	 &lt;/LI&gt;
+ &lt;LI&gt; In addition to the two awesome posts referenced earlier, Matt Vickery works for a company called Incept 5, out of the UK, that provides &lt;EM&gt;very&lt;/EM&gt; robust modeling tools for marshalling to-and-from various data types, including  
+	CSV, XML, SWIFT, JSON, FpML, Columnar, etc.  Naturally, this support works particularly nicely with Spring and Spring Integration.
+	 He&#039;s written up part one of what appears to be a series of this support - called &lt;a href = &quot;http://techiquest.blogspot.com/2012/05/spring-and-c24-io-part-1-c24-spring.html&quot;&gt;Spring and C24 iO&lt;/a&gt; - on his blog. 
+	 For anybody who&#039;s done complex financial services integrations, you&#039;ll know that support for things like SWIFT, FpML, etc., are critical, so it&#039;s nice to see that there are solid offerings available for the Spring Integration user base! 
+	 &lt;/LI&gt;
+   &lt;LI&gt;  Blogger &lt;EM&gt;John&lt;/EM&gt; has not one, but &lt;EM&gt;two&lt;/EM&gt; awesome blogs up this week. The first is on  &lt;a href =&quot;http://outbottle.com/?p=18&quot;&gt;correctly generating Spring 3 MVC applications using Netbeans&lt;/a&gt;, and the second is on &lt;a href = &quot;http://outbottle.com/?p=65&quot;&gt;Spring MVC RequestMappings with &lt;CODE&gt;@PathVariables&lt;/CODE&gt;&lt;/A&gt;. Very cool, John!  I look forward to more! &lt;/LI&gt;
+
+ &lt;LI&gt; Are you using Spring MVC to bind form data to a backing bean but hitting issues related to Hibernate&#039;s use of JavaAssist-based proxies? This blog has an &lt;a href = &quot;http://doginpool.blogspot.com/2012/05/binding-spring-form-using-bean-with-map.html&quot;&gt;explanation on how to solve that problem&lt;/A&gt;. 
+	&lt;/LI&gt; 
+
+ &lt;LI&gt; The &lt;EM&gt;Trimbo&lt;/EM&gt; blog has an interesting  look at the downright unpleasant looking things required &lt;a href = &quot;http://trimbo.blogspot.com/2012/05/jersey-tests-with-embedded-jetty-and.html&quot;&gt;to integrate with Jersey and JAX-RS for tests with embedded Jetty.&lt;/A&gt; If you have to do these sorts of things, then this might be of use to you. Otherwise, may I recommend you stick with Spring MVC? 
+	
+	  &lt;/LI&gt;
+
+	
+&lt;/ol&gt;</description>
+ <comments>http://www.springsource.org/node/3548#comments</comments>
+ <pubDate>Wed, 09 May 2012 05:29:21 +0000</pubDate>
+ <dc:creator>Josh Long</dc:creator>
+ <guid isPermaLink="false">3548 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>Spring Data Neo4j 2.1.0 Release Candidate 1 Released</title>
+ <link>http://www.springsource.org/node/3547</link>
+ <description>&lt;p&gt;Dear Spring-NOSQL Community,&lt;/p&gt;
+&lt;p&gt;The new Release Candidate 1 of &lt;a href=&quot;http://springsource.org/spring-data/neo4j&quot;&gt;Spring Data&lt;/a&gt; - &lt;a href=&quot;http://neo4j.org&quot;&gt;Neo4j&lt;/a&gt; comes with a number of long requested improvements and additions.&lt;/p&gt;
+&lt;p&gt;First of all, SDN has been updated to &lt;a href=&quot;http://blog.neo4j.org/2012/04/neo4j-17-ga-bastutrask-bank-released.html&quot;&gt;Neo4j 1.7.GA&lt;/a&gt; which includes operational improvements and new grammar to the Cypher graph query language. To complement the added language features, this release of SDN integrates a new version of the cypher-dsl with an improved API.&lt;/p&gt;
+&lt;p&gt;By popular request, support for not only unique node entities but also for relationships is now available. This works using either the remote REST-Server or an embedded Neo4j database.&lt;/p&gt;
+&lt;p&gt;Spring Data Neo4j was refactored to streamline the internal setup allowing you to construct Neo4j-Template instance directly. &lt;/p&gt;
+&lt;p&gt;If you have any questions or suggestions don&#039;t hesitate to ask on the &lt;a href=&quot;http://spring.neo4j.org/discussions&quot;&gt;Spring Forums&lt;/a&gt;, the &lt;a href=&quot;http://neo4j.org/forums&quot;&gt;Neo4j Google Group&lt;/a&gt; or by raising an issue in &lt;a href=&quot;http://spring.neo4j.org/issues&quot;&gt;JIRA&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also check out the &lt;a href=&quot;http://www.infoq.com/minibooks/good-relationships-spring-data&quot;&gt;Spring Data Neo4j Guidebook&lt;/a&gt; on InfoQ. It is available as PDF and ePUB and soon also in print.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;p&gt;Changes in version 2.1.RC1 (2012-05-07)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DATAGRAPH-228 update to Neo4j 1.7, SD-Commons 1.3.0.RC2, Neo4j-Spatial 0.8, Neo4j-Java-Rest-Binding 1.7&lt;/li&gt;
+&lt;li&gt;DATAGRAPH-206 Neo4jTemplate can now also be instantiated directly, MappingInfrastructureFactoryBean takes care of providing dependencies&lt;/li&gt;
+&lt;li&gt;DATAGRAPH-219, DATAGRAPH-210 unique relationships with annotation and via template, and documentation for unique entities&lt;/li&gt;
+&lt;li&gt;DATAGRAPH-221 indexed needed by the persistent entities are now created upfront by an MappingContextListener to satisfy cypher checks&lt;/li&gt;
+&lt;li&gt;DATAGRAPH-214 numeric fields can be indexed non-numerically&lt;/li&gt;
+&lt;li&gt;DATAGRAPH-181 fix for creating unique entities with numeric unique fields&lt;/li&gt;
+&lt;li&gt;DATAGRAPH-213 support inheritance (querying) of relationship-entities&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Project resources:&lt;br /&gt;
+&lt;a href=&quot;http://www.springsource.com/download/community?project=Spring%20Data%20Neo4j&quot;&gt;Downloads&lt;/a&gt; | &lt;a href=&quot;http://spring.neo4j.org/notes&quot;&gt;Reference Card&lt;/a&gt; | &lt;a href=&quot;http://static.springsource.org/spring-data/data-neo4j/docs/2.1.0.RC1/api/&quot;&gt;JavaDocs&lt;/a&gt; | &lt;a href=&quot;http://static.springsource.org/spring-data/data-neo4j/docs/2.1.0.RC1/reference/html/&quot;&gt;Spring Data Neo4j Guide Book&lt;/a&gt; | &lt;a href=&quot;http://static.springsource.org/spring-data/data-neo4j/docs/2.1.0.RC1/changelog.txt&quot;&gt;Changelog&lt;/a&gt; | &lt;a href=&quot;http://spring.neo4j.org/source&quot;&gt;GitHub Repository&lt;/a&gt;&lt;/p&gt;
+</description>
+ <comments>http://www.springsource.org/node/3547#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Mon, 07 May 2012 16:33:14 +0000</pubDate>
+ <dc:creator>mhunger</dc:creator>
+ <guid isPermaLink="false">3547 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>Spring Data MongoDB 1.1.0 M1 released</title>
+ <link>http://www.springsource.org/node/3546</link>
+ <description>&lt;p&gt;I&#039;d like to announce the availability of Spring Data MongoDB 1.1.0 M1. This is the first milestone of the 1.1.0 branch and comes with a hand full of new features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for GridFS (&lt;a href=&quot;http://jira.springsource.org/browse/DATAMONGO-6&quot;&gt;DATAMONGO-6&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Support for JSR-303 validation (&lt;a href=&quot;http://jira.springsource.org/browse/DATAMONGO-36&quot;&gt;DATAMONGO-36&lt;/a&gt; - community contribution)&lt;/li&gt;
+&lt;li&gt;Support for new repository keywords: StartsWith, EndsWith, Contains, After, Before (&lt;a href=&quot;http://jira.springsource.org/browse/DATAMONGO-418&quot;&gt;DATAMONGO-418&lt;/a&gt;, &lt;a href=&quot;http://jira.springsource.org/browse/DATAMONGO-427&quot;&gt;427&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;CDI integration for repositories (&lt;a href=&quot;http://jira.springsource.org/browse/DATAMONGO-356&quot;&gt;DATAMONGO-356&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.springsource.com/download/community?project=Spring%20Data%20MongoDB&amp;amp;version=1.1.0.M1&quot;&gt;Downloads&lt;/a&gt; | &lt;a href=&quot;http://static.springsource.org/spring-data/data-mongodb/docs/1.1.0.M1/api/&quot;&gt;JavaDocs&lt;/a&gt; | &lt;a href=&quot;http://static.springsource.org/spring-data/data-mongodb/docs/1.1.0.M1/reference/html/&quot;&gt;Reference Documentation&lt;/a&gt; | &lt;a href=&quot;http://static.springframework.org/spring-data/data-mongodb/docs/1.1.0.M1/changelog.txt&quot;&gt;Changelog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The release is available from our &lt;a href=&quot;http://repo.springsource.org/milestone/org/springframework/data/spring-data-mongodb/1.1.0.M1&quot;&gt;Maven repository&lt;/a&gt;. To learn more about the project, visit the Spring Data &lt;a href=&quot;http://www.springsource.org/spring-data/mongodb&quot;&gt;MongoDB Page&lt;/a&gt;. Looking forward to your feedback on the &lt;a href=&quot;http://forum.springsource.org/forumdisplay.php?f=80&quot;&gt;forum&lt;/a&gt; or in the &lt;a href=&quot;https://jira.springsource.org/browse/DATAMONGO&quot;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
+</description>
+ <comments>http://www.springsource.org/node/3546#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Mon, 07 May 2012 15:16:59 +0000</pubDate>
+ <dc:creator>ogierke</dc:creator>
+ <guid isPermaLink="false">3546 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>SpringSource Tool Suite 3.0.0.M1 released</title>
+ <link>http://www.springsource.org/node/3539</link>
+ <description>&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the first milestone release 3.0.0.M1 of the SpringSource Tool Suite (STS).&lt;/p&gt;
+&lt;p&gt;Highlights from this milestone include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the distribution now ships on top of the Eclipse Juno M6 (4.2M6) packages.&lt;/li&gt;
+&lt;li&gt;updated to tc Server 2.6.5&lt;/li&gt;
+&lt;li&gt;some improvements around Spring-related content-assists and code templates&lt;/li&gt;
+&lt;li&gt;Groovy 2.0 support&lt;/li&gt;
+&lt;li&gt;Grails 2.0.3 support&lt;/li&gt;
+&lt;li&gt;Java7 support for AspectJ/AJDT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since the Eclipse Juno release in June will be based on the new Eclipse 4.2 platform (instead of the 3.x development stream), we decided to ship this milestone build of STS based on the latest Juno milestone builds instead of the latest Indigo SR2 release. We expect a lot of fixes in the Eclipse platform until the final Eclipse version ships in June, so some glitches that you might experience using this M1 build of STS will be fixed for the release. Nevertheless we would like to encourage you to give this M1 build a try and report problems and incompatibilities that you experience while using it.&lt;/p&gt;
+&lt;p&gt;In addition to the distribution we still provide 3.7-compatible update sites, so you can continue to use your existing Indigo-based STS installation and update to the 3.0 version of STS. Support for Eclipse Helios (3.6) will not be provided with STS 3.0.&lt;/p&gt;
+&lt;p&gt;More details can be found in the &lt;a href=&quot;http://download.springsource.com/release/STS/doc/STS-new_and_noteworthy-3.0.0.M1.pdf&quot;&gt;New and Noteworthy for 3.0.0.M1&lt;/a&gt;  document.&lt;/p&gt;
+&lt;p&gt;As always downloads are available from the &lt;a href=&quot;http://www.springsource.com/landing/best-development-tool-enterprise-java&quot;&gt;STS download page&lt;/a&gt;, check &quot;Other Downloads&quot;.&lt;/p&gt;
+&lt;p&gt;3.0.0.M2 is planned for June 2012, followed by the 3.0.0 GA in July 2012.&lt;/p&gt;
+</description>
+ <comments>http://www.springsource.org/node/3539#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Thu, 03 May 2012 13:46:26 +0000</pubDate>
+ <dc:creator>Martin Lippert</dc:creator>
+ <guid isPermaLink="false">3539 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>This Week in Spring, May 1, 2012</title>
+ <link>http://www.springsource.org/node/3538</link>
+ <description> 
+&lt;P&gt; Welcome to another installment of &lt;EM&gt;This Week in Spring&lt;/EM&gt;! 
+	I&#039;m writing the back of the room during &lt;a href = &quot;http://blog.springsource.org/author/adrianc/&quot;&gt;Adrian Colyer&lt;/A&gt;&#039;s amazing keynote at &lt;a href = &quot;http://www.springsource.org/springone-on-the-road/london&quot;&gt;SpringOne On The Road - London&lt;/A&gt; event. 
+&lt;img src = &quot;http://www.springsource.org/files/adrian_keynote_0.jpg&quot; 
+                width = &quot;400&quot; style = &quot;float: right; margin:10px; margin-right  : 10px;&quot;/&gt;
+	 &lt;/P&gt;
+ 
+&lt;OL&gt;
+ 
+
+
+ &lt;LI&gt; Did you  guys miss &lt;a href=&quot;http://blog.springsource.org/author/ozhurakousky/&quot;&gt;Oleg Zhurakousky&lt;/a&gt;&#039;s webinar, &lt;EM&gt;Practical Tips and Tricks with Spring Integration&lt;/EM&gt;? Have no fear, the video is 
+	&lt;a href = &quot;http://www.springsource.org/node/3536&quot;&gt;available online&lt;/A&gt;. 
+ 
+
+Also, be sure to check out part 2, this Wednesday, May 3rd for both  &lt;a href = &quot;http://www.springsource.org/node/3525&quot;&gt;Europe&lt;/A&gt; and &lt;a href = &quot;http://www.springsource.org/node/3526&quot;&gt;North America&lt;/A&gt;!
+
+		&lt;/LI&gt;
+		&lt;LI&gt; &lt;a href = &quot;http://blog.springsource.org/author/rclarkson/&quot;&gt;Roy Clarkson&lt;/A&gt; has announced the &lt;a href = &quot;http://www.springsource.org/spring-mobile/news/1.0.0.rc2-released&quot;&gt;latest release of Spring Mobile&lt;/A&gt;.  
+			 The release has several enhancements including more refined resolution, and improved site switching behavior. 
+			
+			&lt;/LI&gt; 
+			&lt;LI&gt;  &lt;a href = &quot;http://blog.springsource.org/author/jbrisbin/&quot;&gt;Jonathan Brisbin&lt;/A&gt; just announced &lt;a href=&quot;http://blog.springsource.org/author/rclarkson/&quot;&gt;Spring Data REST 1.0.0.M1&lt;/a&gt;, which is a servlet-based web application 
+				   that can be used to export JPA Repositories over HTTP to create RESTful endpoints that user agents can access to manage your exposed JPA Entities. &lt;/LI&gt;
+				
+ &lt;Li&gt; Blogger &lt;em&gt;Daniel Sawano&lt;/em&gt; has put together two blogs introducing how to use Spring MVC with Scala.  The first blog introduces a simple Scala-Java  hybrid &lt;a href = &quot;http://software.sawano.se/2012/04/scala-spring-mvc-true.html&quot;&gt;Spring MVC application setup&lt;/A&gt;, and 
+	  the second blog  introduces how to &lt;A href = &quot;http://software.sawano.se/2012/04/scala-spring-mvc-true-part-2.html&quot;&gt;build a more advanced Spring MVC example with RESTful endpoints using Scala&lt;/A&gt;. Nice job, Daniel! 
+	    
+   &lt;/LI&gt;
+ &lt;LI&gt;  Our pal &lt;em&gt;Jan Machacek&lt;/em&gt; over at Cake Solutions has put together a &lt;EM&gt;really&lt;/EM&gt; cool blog on how to use &lt;a href = &quot;http://www.cakesolutions.net/teamblogs/2012/04/28/akka-spray-and-spring-framework/&quot;&gt;Akka (an actor framework), Spray (an HTTP framework on top of Akka) and Spring together&lt;/A&gt;.  &lt;/LI&gt;
+	
+ &lt;LI&gt; 
+	 Blogger &lt;em&gt;mkyong&lt;/em&gt; has a nice introduction on how to use Google App Engine to setup  &lt;a href = &quot;http://www.mkyong.com/google-app-engine/google-app-engine-spring-3-mvc-rest-example/&quot;&gt;a RESTful Spring MVC application on Google App Engine&lt;/A&gt;.
+	 
+	
+	&lt;/LI&gt;	
+ &lt;LI&gt;  Blogger &lt;em&gt;Maciej Walkowiak&lt;/em&gt; has a
+	  fanastic blog on how to force Spring Data MongoDB to cascade saves 
+	&lt;a href = &quot;http://maciejwalkowiak.pl/blog/2012/04/30/spring-data-mongodb-cascade-save-on-dbref-objects/&quot;&gt;
+	to  related document objects 
+	 annotated with &lt;CODE&gt;@DbRef&lt;/CODE&gt;&lt;/A&gt;. 
+	  &lt;/LI&gt;
+   &lt;LI&gt; 
+	 Over on the Rai Studies blog, there&#039;s a few good blog posts on setting up &lt;a href = &quot;http://www.raistudies.com/spring/spring-mvc/spring-mvc-3-crud-example-with-mybatis-3/&quot;&gt;Spring MVC3 CRUD applications using 
+	  MyBatis 3&lt;/A&gt;.
+	  &lt;/LI&gt;
+	 &lt;LI&gt; Our friend &lt;em&gt;Tobias Trelle&lt;/em&gt; has another installment of his fantastic series introducing Spring Data. This &lt;a href =&quot;http://blog.codecentric.de/en/2012/04/spring-data-redis/&quot;&gt;post introduces Redis&lt;/A&gt;. 
+		&lt;/LI&gt;
+ 
+ &lt;LI&gt; The Thymeleaf project, and &lt;em&gt;Soraya S&amp;aacute;nchez&lt;/em&gt;, in particular, has put together a wonderful example showing  &lt;a href = &quot;http://www.thymeleaf.org/petclinic.html&quot;&gt;how to rework the  classic Spring PetClinic sample application to use the powerful Thymeleaf templating engine&lt;/A&gt;.   &lt;/LI&gt;
+	
+ &lt;LI&gt;
+	 Tomcat engineer &lt;a href = &quot;http://www.tomcatexpert.com/users/fhanik&quot;&gt;Filip Hanik&lt;/A&gt;  has put together a wonderful blog introducing
+		 how to &lt;a href = &quot;http://www.tomcatexpert.com/blog/2012/04/24/websockets-tomcat-7&quot;&gt;use WebSockets in Apache Tomcat 7&lt;/A&gt;.			 
+	&lt;/LI&gt;  
+	
+	&lt;LI&gt; Blogger &lt;em&gt;Matt Vickery&lt;/em&gt; has a great blog introducing how to 
+		&lt;a href   = &quot;http://java.dzone.com/articles/spring-integration-payload&quot;&gt;use header enrichment in Spring Integration to store  payload data&lt;/A&gt;. 
+		 &lt;/LI&gt;
+
+  &lt;LI&gt; Our friend &lt;em&gt;Willie Wheeler&lt;/em&gt;, author of Manning&#039;s &lt;EM&gt;Spring in Practice&lt;/EM&gt;,  has a great post on using &lt;a href = &quot;http://springinpractice.com/2012/04/24/autogenerate-daos-and-queries-using-spring-data-jpa/&quot;&gt;Spring Data JPA to create dynamic DAOs and queries&lt;/A&gt;.  &lt;/LI&gt;
+  &lt;LI&gt;  &lt;em&gt;Billy Sj&amp;ouml;berg&lt;/em&gt;  has a great blog on using &lt;a href = &quot;http://java.dzone.com/articles/bridging-between-jms-and&quot;&gt;Spring Integration to bridge AMQP and JMS&lt;/A&gt;.  &lt;/LI&gt;
+
+ &lt;LI&gt; 
+ Over on Xebia&#039;s Xebee blog, 	 &lt;em&gt;Anita Parida&lt;/em&gt;  has put together a great blog introducing how to setup &lt;a href = &quot;http://xebee.xebia.in/2012/04/30/ldap-authentication-using-spring-security/&quot;&gt;LDAP authentication using Spring Security&lt;/a&gt;.
+	  &lt;/LI&gt;
+ &lt;LI&gt; The CandidJava blog has a very... &lt;em&gt;candid&lt;/EM&gt; look at how to setup &lt;a href =&quot;http://candidjava.com/spring-mvc-fileupload-example-prgram-eclipse&quot;&gt;file uploads in Spring MVC that map to a domain model in the backend&lt;/A&gt;.  &lt;/LI&gt;
+  &lt;LI&gt;
+	 Check out this blog if you want a narrated example introducing &lt;a href = &quot;http://chenying99.iteye.com/blog/1498054&quot;&gt;how to do Spring MVC 3.0, and Hibernate, with annotations&lt;/a&gt;. 
+	  &lt;/LI&gt;
+
+   &lt;LI&gt;  AMQP&#039;s a powerful technology, and RabbitMQ, the leading AMQP-based message broker, is even more so. However, one common question I get is: what other implementations are there? This blog &lt;a href =&quot;http://www.fromdev.com/2012/04/top-5-open-source-amqp-advanced-message.html&quot;&gt;has the top 5 implementations&lt;/A&gt; (though, clearly not in order, because &lt;a href = &quot;http://www.rabbitmq.com/&quot;&gt;RabbitMQ&lt;/A&gt; would have to be #1, otherwise!)&lt;/LI&gt; 
+
+ &lt;LI&gt;  Want to manage JTA transactions on JBoss AS 7 using Spring and Hibernate? This &lt;EM&gt;gist&lt;/EM&gt; by &lt;a href =&quot;https://github.com/ggerard&quot;&gt;ggerard&lt;/A&gt; shows &lt;a href = &quot;https://gist.github.com/2484231&quot;&gt;one possible configuration&lt;/A&gt;. &lt;/LI&gt;
+  
+&lt;/OL&gt;</description>
+ <comments>http://www.springsource.org/node/3538#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Tue, 01 May 2012 15:02:07 +0000</pubDate>
+ <dc:creator>Josh Long</dc:creator>
+ <guid isPermaLink="false">3538 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>Video: Practical Tips and Tricks with Spring Integration</title>
+ <link>http://www.springsource.org/node/3536</link>
+ <description>&lt;p&gt;The idea for this video was triggered by &lt;a href=&quot;http://blog.springsource.org/author/ozhurakousky/&quot;&gt;Oleg Zhurakousky&lt;/a&gt;&#039;s desire to share some of the more interesting integration solutions that came out of the actual customer engagements as well as the questions that are most frequently asked on the Spring Integration forums. Oleg showcases the &lt;a href=&quot;/spring-integration&quot;&gt;Spring Integration&lt;/a&gt; framework and how it can help you to build, manage and maintain powerful enterprise-grade integration solutions. In this edition of &quot;Practical Tips-and-Tricks&quot; Oleg covers some of the more advanced topics of enterprise integration such as message-flow-segmentation, custom retry logic, error handling, timeouts and more. This video is based on a refined version of &lt;a href=&quot;http://www.infoq.com/presentations/Spring-Integration-Practical-Tips-and-Tricks&quot;&gt;Oleg&#039;s very successful talk delivered at SpringOne 2GX 2011&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To review basics of messaging and Spring Integration watch this &lt;a href=&quot;http://www.youtube.com/watch?v=NAWpVS8t_Ug&quot;&gt;Message Driven Architecture&lt;/a&gt; video by Mark Fisher.
+&lt;/p&gt;
+
+
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;object width=&quot;560&quot; height=&quot;349&quot;&gt;
+&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/embed/RY6dNUL8k6o?version=3&amp;amp;hl=en_US&quot; /&gt;
+&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;embed src=&quot;http://www.youtube.com/v/RY6dNUL8k6o?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;560&quot; height=&quot;349&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Be sure to thumbs up the presentation if you find it useful and &lt;a href=&quot;http://www.youtube.com/subscription_center?adduser=SpringSourceDev&quot;&gt;subscribe to the SpringSourceDev channel&lt;/a&gt; to see other recordings and screencasts.&lt;/p&gt;
+</description>
+ <comments>http://www.springsource.org/node/3536#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Thu, 26 Apr 2012 09:38:33 +0000</pubDate>
+ <dc:creator>Adam Fitzgerald</dc:creator>
+ <guid isPermaLink="false">3536 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>Spring Mobile 1.0.0.RC2 Released</title>
+ <link>http://www.springsource.org/spring-mobile/news/1.0.0.rc2-released</link>
+ <description>&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+
+&lt;p&gt;
+We are pleased to announce that the second release candidate of the &lt;a href=&quot;http://www.springsource.org/spring-mobile&quot;&gt;Spring Mobile&lt;/a&gt; project is now available!
+&lt;/p&gt;
+&lt;p&gt;Spring Mobile provides extensions to Spring MVC that aid in the development of cross-platform mobile web applications.&lt;/p&gt;
+
+&lt;p&gt;Here is an overview of the new features and functionality:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Tablets are no longer recognized as mobile devices&lt;/li&gt;
+    &lt;li&gt;Added support for resolving tablet devices in LiteDeviceResolver.&lt;/li&gt;    
+    &lt;li&gt;Added a new DeviceType enumeration consisting of NORMAL, MOBILE, and TABLET values.&lt;/li&gt;
+    &lt;li&gt;The Device interface now includes isNormal(), and isTablet() methods in addition to the existing isMobile() method.&lt;/li&gt;
+    &lt;li&gt;WebOS devices are now recognized as a mobile device in LiteDeviceResolver&lt;/li&gt;
+    &lt;li&gt;Improved the SiteSwitcherHandlerInterceptor by adding an URL path alternative to &quot;dotMobi&quot; and &quot;mDot&quot; for site switching. The switcher is now capable of switching between &quot;normal&quot; and &quot;mobile&quot; URL paths within the same domain. For example an about page for a normal site may be &quot;http://www.domain.com/about&quot;, and the mobile site may be &quot;http://www.domain.com/m/about&quot;&lt;/li&gt;
+    &lt;li&gt;You can now configure a list of &quot;normal&quot; User-Agent keywords in the LiteDeviceResolver. It may happen that a device is falsely identified as mobile. This list of keywords takes precedence over the mobile and tablet keywords, effectively overriding the default behavior.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;http://static.springsource.org/spring-mobile/docs/1.0.0.RC2/changelog.txt&quot;&gt;changelog&lt;/a&gt; and &lt;a href=&quot;http://static.springsource.org/spring-mobile/docs/1.0.0.RC2/reference/html/&quot;&gt;reference manual&lt;/a&gt; for more information.
+&lt;/p&gt;
+
+&lt;p&gt;To retrieve the software, 
+&lt;a href=&quot;http://www.springsource.com/download/community?project=Spring%20Mobile&quot;&gt;download&lt;/a&gt; the release distribution, or add the &lt;a href=&quot;http://static.springsource.org/spring-mobile/docs/1.0.x/reference/html/device.html#spring-mobile-device-howtoget&quot;&gt;maven artifacts&lt;/a&gt; to your project. Sample apps are available at &lt;a href=&quot;https://github.com/SpringSource/spring-mobile-samples&quot;&gt;github.com/SpringSource/spring-mobile-samples&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We want to thank Scott Rossillo for his contributions to this release, and we look forward to working with him and the rest of the Spring community on future releases.  If you are building a mobile web app, we encourage you try out 1.0.0.RC2 and &lt;a href=&quot;http://forum.springsource.org/forumdisplay.php?f=85&quot;&gt;collaborate&lt;/a&gt; with us on the next iteration of the project.&lt;/p&gt;</description>
+ <comments>http://www.springsource.org/spring-mobile/news/1.0.0.rc2-released#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Thu, 26 Apr 2012 01:21:36 +0000</pubDate>
+ <dc:creator>Roy Clarkson</dc:creator>
+ <guid isPermaLink="false">3532 at http://www.springsource.org</guid>
+</item>
+<item>
+ <title>Spring Data REST 1.0.0.M1 Released</title>
+ <link>http://www.springsource.org/node/3535</link>
+ <description>&lt;p&gt;The Spring Data team is pleased to announce the (initial) 1.0.0.M1 release of Spring Data REST. &lt;/p&gt;
+&lt;p&gt;This release contains a Servlet-based web application that can be used to export JPA Repositories over HTTP to create RESTful endpoints that user agents can access to manage your exposed JPA Entities. Browsers (via Javascript) or non-interactive agents like &lt;code&gt;curl&lt;/code&gt; or &lt;code&gt;wget&lt;/code&gt; can perform CRUD operations on entities, including managing relationships between entities through the use of Links.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/springsource/spring-data-rest-webmvc&quot;&gt;Starter Web Application&lt;/a&gt; | &lt;a href=&quot;https://github.com/SpringSource/spring-data-rest/wiki/&quot;&gt;Wiki&lt;/a&gt; | &lt;a href=&quot;https://jira.springsource.org/secure/ReleaseNote.jspa?projectId=10901&amp;amp;version=12843&quot;&gt;Release Notes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To learn more about the project, visit the Spring Data REST &lt;a href=&quot;http://www.springsource.org/spring-data/rest&quot;&gt;homepage&lt;/a&gt;, or visit &lt;a href=&quot;https://github.com/SpringSource/spring-data-rest&quot;&gt;the Github repository&lt;/a&gt; to download the source.&lt;/p&gt;
+</description>
+ <comments>http://www.springsource.org/node/3535#comments</comments>
+ <category domain="http://www.springsource.org/taxonomy/term/4">News and Announcements</category>
+ <pubDate>Tue, 24 Apr 2012 16:41:46 +0000</pubDate>
+ <dc:creator>Jonathan Brisbin</dc:creator>
+ <guid isPermaLink="false">3535 at http://www.springsource.org</guid>
+</item>
+</channel>
+</rss>

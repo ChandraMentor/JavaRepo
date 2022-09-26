@@ -1,0 +1,11 @@
+package com.dt.service;
+
+import com.dt.business.EmployeeBO;
+import com.dt.business.EmployeeDepartmentBO;
+
+public class ManageEmployeeService {
+	public void newJoinee(EmployeeBO employeeInfo,
+			EmployeeDepartmentBO empDeptInfo) {
+
+	}
+}

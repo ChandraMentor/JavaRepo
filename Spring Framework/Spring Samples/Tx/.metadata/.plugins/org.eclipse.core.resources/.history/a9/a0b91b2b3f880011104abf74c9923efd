@@ -1,0 +1,16 @@
+package com.dt.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class DTTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"com/dt/common/persistence-beans.xml");
+	}
+
+}

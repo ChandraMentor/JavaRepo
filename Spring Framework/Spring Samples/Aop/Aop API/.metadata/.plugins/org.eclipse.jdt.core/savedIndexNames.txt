@@ -1,0 +1,8 @@
+INDEX VERSION 1.126+D:\WorkShop\Trainings\March, 2012\Spring\Aop\.metadata\.plugins\org.eclipse.jdt.core
+3229400565.index
+2651523533.index
+2146074926.index
+1517364599.index
+1588137591.index
+1667264933.index
+3796873952.index

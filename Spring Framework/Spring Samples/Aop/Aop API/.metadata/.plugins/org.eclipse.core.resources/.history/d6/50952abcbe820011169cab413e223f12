@@ -1,0 +1,5 @@
+package com.ta.beans;
+
+public class ExceptionLogger {
+
+}

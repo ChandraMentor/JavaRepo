@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.dt.business&apos; to &apos;com.at.business&apos;&#x0D;&#x0A;- Original project: &apos;AnnotationTx&apos;&#x0D;&#x0A;- Original element: &apos;AnnotationTx/src/com.dt.business&apos;&#x0D;&#x0A;- Renamed element: &apos;AnnotationTx/src/com.at.business&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.dt.business&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.dt.business" name="com.at.business" qualified="false" references="true" stamp="1334714885199" textual="true" version="1.0"/>
+</session>

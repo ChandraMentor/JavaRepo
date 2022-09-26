@@ -1,0 +1,14 @@
+package com.stock.bean;
+
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
+
+public class StockCacheAdvisor implements MethodInterceptor {
+
+	public Object invoke(MethodInvocation invocation) throws Throwable {
+		Object args[] = invocation.getArguments();
+		String qn = (String) args[0];
+		return null;
+	}
+
+}

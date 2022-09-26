@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/aop/aop/com.springsource.net.sf.cglib-2.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/aop/aop/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/aop/aop/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/aop/aop/org.springframework.aop-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/aop/aop/org.springframework.aspects-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/aop/aop/org.springframework.instrument.tomcat-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/aop/aop/org.springframework.instrument-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/core/core/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/core/core/com.springsource.org.apache.log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/core/core/jmxtools-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/core/core/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/core/core/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/core/core/org.springframework.context-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/core/core/org.springframework.core-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/core/core/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/j2ee/j2ee/org.springframework.jms-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/javaconfig/javaconfig/org.springframework.config.java-1.0.0.M4.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/javaconfig/javaconfig/spring-javaconfig.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistCore/persistCore/org.springframework.jdbc-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistCore/persistCore/org.springframework.orm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistCore/persistCore/org.springframework.transaction-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistCore/persistCore/persistence.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistJdbc/persistJdbc/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistJdbc/persistJdbc/com.springsource.org.apache.commons.lang-2.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistJdbc/persistJdbc/com.springsource.org.apache.commons.pool-1.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistJdbc/persistJdbc/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistJdbc/persistJdbc/jotm.jar"/>
+	<classpathentry kind="lib" path="C:/Online 6am/Spring Framework/Spring Classes/springjars/springjars/persistJdbc/persistJdbc/xapool.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
